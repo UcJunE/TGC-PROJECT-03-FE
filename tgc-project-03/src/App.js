@@ -6,10 +6,12 @@ import Nav from "react-bootstrap/Nav";
 import Navbar from "react-bootstrap/Navbar";
 // import react router stuff
 import { BrowserRouter as Router, Routes, Route, Link } from "react-router-dom";
+//import in pages
 import ContactUs from "./pages/contact-us";
 import Home from "./pages/home";
 import AboutUs from "./pages/about-us";
 import Products from "./pages/Product";
+import ProductDetails from "./pages/ProductDetails";
 
 //import in provider
 import ProductsProvider from "./providers/ProductsProvider";
@@ -37,6 +39,14 @@ function App() {
           element={
             <ProductsProvider>
               <Products />
+            </ProductsProvider>
+          }
+        />
+        <Route
+          path="/product/:productId/view"
+          element={
+            <ProductsProvider>
+              <ProductDetails />
             </ProductsProvider>
           }
         />

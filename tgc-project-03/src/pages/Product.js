@@ -1,4 +1,5 @@
-import React, { useContext, useEffect, useState } from "react";
+import React, { useContext } from "react";
+import { Link } from "react-router-dom";
 import Accordion from "react-bootstrap/Accordion";
 import Card from "react-bootstrap/Card";
 import Col from "react-bootstrap/Col";
@@ -128,14 +129,14 @@ export default function Products() {
                       <Card.Text>
                         From ${(product.cost / 100).toFixed(2)}
                       </Card.Text>
-                      {/* <Button
+                      <Button
                         className="mt-3"
                         variant="primary"
                         as={Link}
-                        to={`/products/${props.product.id}/view`}
+                        to={`/products/${product.id}/view`}
                       >
                         View
-                      </Button> */}
+                      </Button>
                     </Card.Body>
                   </Card>
                 </div>
