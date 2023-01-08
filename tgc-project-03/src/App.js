@@ -17,27 +17,17 @@ import ProductsProvider from "./providers/ProductsProvider";
 import UserProvider from "./providers/UsersProvider";
 //import components
 import Toastify from "./components/Toastify";
+import NavigationBar from "./components/NavigationBar";
 
 function App() {
   return (
     <React.Fragment>
       <Toastify />
       <Router>
-        <Navbar bg="dark" variant="dark">
-          <Container>
-            <Navbar.Brand href="#home">Navbar</Navbar.Brand>
-            <Nav className="me-auto">
-              <Link to="/">Home</Link>
-              <Link to="/login">login</Link>
-              <Link to="/contact">Contact US</Link>
-              <Link to="/product">Product</Link>
-            </Nav>
-          </Container>
-        </Navbar>
+        <NavigationBar />
         <Routes>
-          {/* <Route path="/" element={<Home />} /> */}
-          <Route path="/about" element={<AboutUs />} />
-          <Route path="/contact" element={<ContactUs />} />
+
+        {/* products route */}
           <Route
             path="/"
             element={
@@ -54,6 +44,7 @@ function App() {
               </ProductsProvider>
             }
           />
+          {/* client route */}
           <Route
             path="/login"
             element={

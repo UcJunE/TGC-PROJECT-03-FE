@@ -5,6 +5,7 @@ import Card from "react-bootstrap/Card";
 import Col from "react-bootstrap/Col";
 import Button from "react-bootstrap/Button";
 import Form from "react-bootstrap/Form";
+import FloatingLabel from "react-bootstrap/FloatingLabel";
 //context
 
 import ProductContext from "../contexts/ProductContext";
@@ -57,16 +58,15 @@ export default function Products() {
         <Accordion.Item eventKey="0">
           <Accordion.Header>Search</Accordion.Header>
           <Accordion.Body>
-            <Form.Group className="mb-3">
-              <Form.Label>Name</Form.Label>
+            <FloatingLabel className="mb-3" label="Enter name of product">
               <Form.Control
                 type="text"
-                placeholder="Enter name of product"
                 name="name"
+                placeholder="Enter name of product"
                 value={searchQuery.name}
                 onChange={updateFormField}
               />
-            </Form.Group>
+            </FloatingLabel>
             <Form.Group className="mb-3">
               <Form.Label>Colour</Form.Label>
               <Form.Select
@@ -89,26 +89,39 @@ export default function Products() {
                 {generateDropdownOptions(selection.materials)}
               </Form.Select>
             </Form.Group>
-            <Form.Label>Cost</Form.Label>
-            <Form.Group className="d-flex mb-3">
-              <Form.Control
-                type="text"
-                placeholder="Min cost"
-                name="min_cost"
-                value={searchQuery.min_cost}
-                onChange={updateFormField}
-              />
-              <Form.Control
-                className="ms-3"
-                type="text"
-                placeholder="Max cost"
-                name="max_cost"
-                value={searchQuery.max_cost}
-                onChange={updateFormField}
-              />
-            </Form.Group>
-            <button onClick={productContext.setSearchProducts}>Submit</button>
-            <button onClick={productContext.resetSearchProducts}>Reset</button>
+            <div className="container px-0 d-flex">
+              <FloatingLabel className="d-flex mb-3" label="Min cost">
+                <Form.Control
+                  type="text"
+                  placeholder="Min cost"
+                  name="min_cost"
+                  value={searchQuery.min_cost}
+                  onChange={updateFormField}
+                />
+              </FloatingLabel>
+              <FloatingLabel className="mb-3 mx-2" label="Max cost">
+                <Form.Control
+                  type="text"
+                  placeholder="Max cost"
+                  name="max_cost"
+                  value={searchQuery.max_cost}
+                  onChange={updateFormField}
+                />
+              </FloatingLabel>
+            </div>
+
+            <button
+              className="btn btn-primary"
+              onClick={productContext.setSearchProducts}
+            >
+              Submit
+            </button>
+            <button
+              className="btn btn-primary mx-3"
+              onClick={productContext.resetSearchProducts}
+            >
+              Reset
+            </button>
           </Accordion.Body>
         </Accordion.Item>
       </Accordion>
