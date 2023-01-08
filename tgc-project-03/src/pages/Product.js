@@ -57,7 +57,7 @@ export default function Products() {
         <Accordion.Item eventKey="0">
           <Accordion.Header>Search</Accordion.Header>
           <Accordion.Body>
-            <Form.Group className="mb-3" controlId="formAuthorName">
+            <Form.Group className="mb-3">
               <Form.Label>Name</Form.Label>
               <Form.Control
                 type="text"
@@ -67,7 +67,7 @@ export default function Products() {
                 onChange={updateFormField}
               />
             </Form.Group>
-            <Form.Group className="mb-3" controlId="formAuthorName">
+            <Form.Group className="mb-3">
               <Form.Label>Colour</Form.Label>
               <Form.Select
                 aria-label="Default select example"
@@ -78,7 +78,7 @@ export default function Products() {
                 {generateDropdownOptions(selection.colors)}
               </Form.Select>
             </Form.Group>
-            <Form.Group className="mb-3" controlId="formAuthorName">
+            <Form.Group className="mb-3">
               <Form.Label>Material</Form.Label>
               <Form.Select
                 aria-label="Default select example"
@@ -90,7 +90,7 @@ export default function Products() {
               </Form.Select>
             </Form.Group>
             <Form.Label>Cost</Form.Label>
-            <Form.Group className="d-flex mb-3" controlId="formAuthorName">
+            <Form.Group className="d-flex mb-3">
               <Form.Control
                 type="text"
                 placeholder="Min cost"
