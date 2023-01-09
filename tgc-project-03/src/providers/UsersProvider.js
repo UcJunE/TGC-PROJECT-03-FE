@@ -18,6 +18,7 @@ export default function UserProvider(props) {
   //user context
   const userContext = {
     checkIfAuthenticated: () => {
+      console.log("check run from nav");
       if (
         JSON.parse(localStorage.getItem("accessToken")) &&
         JSON.parse(localStorage.getItem("refreshToken"))
@@ -79,6 +80,25 @@ export default function UserProvider(props) {
         }
       } catch (e) {
         console.log(e);
+      }
+    },
+    logout: async (option = "") => {
+      console.log("logout route from provider is triggerred");
+      try {
+        await axios.post(BASE_API_URL + "/account/logout", {
+          refreshToken: JSON.parse(localStorage.getItem("refreshToken")),
+        });
+        // Clear state
+        localStorage.removeItem("accessToken");
+        localStorage.removeItem("refreshToken");
+
+        if (option !== "expire") {
+          toast.success("Logged out successfully");
+          navigateTo("/");
+        }
+      } catch (e) {
+        console.log(e);
+        // toast.error("An error occurred while logging out. Please try again");
       }
     },
   };

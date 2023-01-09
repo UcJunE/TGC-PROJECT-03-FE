@@ -24,43 +24,31 @@ function App() {
     <React.Fragment>
       <Toastify />
       <Router>
-        <NavigationBar />
-        <Routes>
-          {/* products route */}
-          <Route
-            path="/"
-            element={
-              <ProductsProvider>
-                <Products />
-              </ProductsProvider>
-            }
-          />
-          <Route
-            path="/product/:productId/view"
-            element={
-              <ProductsProvider>
-                <ProductDetails />
-              </ProductsProvider>
-            }
-          />
-          {/* client route */}
-          <Route
-            path="/login"
-            element={
-              <UserProvider>
-                <Login />
-              </UserProvider>
-            }
-          />
-          <Route
-            path="/register"
-            element={
-              <UserProvider>
-                <Register />
-              </UserProvider>
-            }
-          />
-        </Routes>
+        <UserProvider>
+          <NavigationBar />
+          <Routes>
+            {/* products route */}
+            <Route
+              path="/"
+              element={
+                <ProductsProvider>
+                  <Products />
+                </ProductsProvider>
+              }
+            />
+            <Route
+              path="/product/:productId/view"
+              element={
+                <ProductsProvider>
+                  <ProductDetails />
+                </ProductsProvider>
+              }
+            />
+            {/* client route */}
+            <Route path="/login" element={<Login />} />
+            <Route path="/register" element={<Register />} />
+          </Routes>
+        </UserProvider>
       </Router>
     </React.Fragment>
   );

@@ -24,6 +24,9 @@ export default function NavigationBar() {
             <Nav.Link eventKey="2" as={Link} to="/register">
               Register
             </Nav.Link>
+            <Nav.Link eventKey="3" onClick={userContext.logout}>
+             Logout
+            </Nav.Link>
           </Nav>
         </Navbar.Collapse>
       </Container>
