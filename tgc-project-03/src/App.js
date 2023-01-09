@@ -7,7 +7,7 @@ import Navbar from "react-bootstrap/Navbar";
 // import react router stuff
 import { BrowserRouter as Router, Routes, Route, Link } from "react-router-dom";
 //import in pages
-import ContactUs from "./pages/contact-us";
+import Register from "./pages/Register";
 import AboutUs from "./pages/about-us";
 import Products from "./pages/Product";
 import ProductDetails from "./pages/ProductDetails";
@@ -26,8 +26,7 @@ function App() {
       <Router>
         <NavigationBar />
         <Routes>
-
-        {/* products route */}
+          {/* products route */}
           <Route
             path="/"
             element={
@@ -50,6 +49,14 @@ function App() {
             element={
               <UserProvider>
                 <Login />
+              </UserProvider>
+            }
+          />
+          <Route
+            path="/register"
+            element={
+              <UserProvider>
+                <Register />
               </UserProvider>
             }
           />

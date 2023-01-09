@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import axios from "axios";
 import { toast } from "react-toastify";
-import 'react-toastify/dist/ReactToastify.css';
+import "react-toastify/dist/ReactToastify.css";
 
 import UserContext from "../contexts/UserContext";
 
@@ -27,14 +27,30 @@ export default function UserProvider(props) {
       return false;
     },
     registerUser: async (userData) => {
+      console.log(
+        "it run from register from userProvider with all the userData",
+        userData
+      );
       try {
         let response = await axios.post(
           BASE_API_URL + "/account/register",
           userData
         );
-      } catch {}
+        toast.success("Account successfully registered");
+        if (redirectTo) {
+          navigateTo(redirectTo);
+          setRedirectTo("");
+        } else {
+          navigateTo("/");
+        }
+        return true;
+        console.log("response data from", response);
+      } catch (error) {
+        console.log(error);
+      }
     },
     loginUser: async (userData) => {
+      // console.log("hello from login user")
       try {
         const response = await axios.post(
           BASE_API_URL + "/account/login",
@@ -45,7 +61,7 @@ export default function UserProvider(props) {
           toast.error("Invalid username / password");
           return false;
         } else {
-        //   console.log("it went here");
+          //   console.log("it went here");
           const accessToken = response.data.accessToken;
           const refreshToken = response.data.refreshToken;
 

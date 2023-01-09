@@ -33,11 +33,11 @@ export default function Login(props) {
 
   const loginUser = async () => {
     const result = await userContext.loginUser(formfields);
-    console.log("this is result from loginjs", result);
+    // console.log("this is result from loginjs", result);
     if (!result) {
       setErrors(["error"]);
     } else {
-      console.log("pass here?");
+      // console.log("pass here?");
       setErrors([""]);
       toast.success("Welcome & Enjoy Your Stay");
     }
