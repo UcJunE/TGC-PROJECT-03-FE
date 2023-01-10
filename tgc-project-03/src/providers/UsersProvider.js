@@ -18,7 +18,7 @@ export default function UserProvider(props) {
   //user context
   const userContext = {
     checkIfAuthenticated: () => {
-      console.log("check run from nav");
+      // console.log("check run from nav , userProvider");
       if (
         JSON.parse(localStorage.getItem("accessToken")) &&
         JSON.parse(localStorage.getItem("refreshToken"))
@@ -33,10 +33,7 @@ export default function UserProvider(props) {
         userData
       );
       try {
-        let response = await axios.post(
-          BASE_API_URL + "/account/register",
-          userData
-        );
+        await axios.post(BASE_API_URL + "/account/register", userData);
         toast.success("Account successfully registered");
         if (redirectTo) {
           navigateTo(redirectTo);
@@ -45,7 +42,6 @@ export default function UserProvider(props) {
           navigateTo("/");
         }
         return true;
-        console.log("response data from", response);
       } catch (error) {
         console.log(error);
       }
@@ -82,7 +78,7 @@ export default function UserProvider(props) {
         console.log(e);
       }
     },
-    logout: async (option = "") => {
+    logoutUser: async (option = "") => {
       console.log("logout route from provider is triggerred");
       try {
         await axios.post(BASE_API_URL + "/account/logout", {
@@ -98,7 +94,81 @@ export default function UserProvider(props) {
         }
       } catch (e) {
         console.log(e);
-        // toast.error("An error occurred while logging out. Please try again");
+        toast.error("An error occurred while logging out");
+      }
+    },
+    refreshToken: async () => {
+      //refresh the  token using current JWT and refresh tokens
+      console.log("trying to get token if the token alr blacklisted");
+      try {
+        let response = await axios.post(
+          BASE_API_URL + "/account/refresh",
+          {
+            refreshToken: JSON.parse(localStorage.getItem("refreshToken")),
+          },
+          {
+            headers: {
+              Authorization: `Bearer ${JSON.parse(
+                localStorage.getItem("accessToken")
+              )}`,
+            },
+          }
+        );
+        console.log("this is the response from refreshtoken", response.data);
+        const accessToken = response.data.accessToken;
+        localStorage.setItem("accessToken", JSON.stringify(accessToken));
+
+        return true; // Indicate success
+      } catch (e) {
+        console.log("this error is from refreshToken route", e);
+        if (JSON.parse(localStorage.getItem("refreshToken"))) {
+          await userContext.logoutUser("expire");
+        }
+        navigateTo("/login");
+        toast.error("Session expired , Please login again");
+        return false; // Indicate failure
+      }
+    },
+    getCartItems: async () => {
+      try {
+        let response = await axios.get(BASE_API_URL + "/shoppingcart", {
+          headers: {
+            Authorization: `Bearer ${JSON.parse(
+              localStorage.getItem("accessToken")
+            )}`,
+          },
+        });
+        const cart = response.data;
+
+        return cart;
+      } catch (e) {
+        console.log(e);
+        toast.error("An error occurred. Please kindly try again");
+      }
+    },
+    updateCartItems: async (product_id, quantity) => {
+      try {
+        let response = await axios.post(
+          BASE_API_URL + `/shoppingcart/${product_id}/quantity/update`,
+          {
+            newQuantity: parseInt(quantity),
+          },
+          {
+            headers: {
+              Authorization: `Bearer ${JSON.parse(
+                localStorage.getItem("accessToken")
+              )}`,
+            },
+          }
+        );
+        const result = response.data;
+        console.log("Did update cart success ?", result);
+        return true;
+      } catch (e) {
+        console.log(e);
+        toast.error(
+          "An error occurred while updating the cart item , please try again "
+        );
       }
     },
   };
