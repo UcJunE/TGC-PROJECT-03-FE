@@ -139,7 +139,7 @@ export default function UserProvider(props) {
           },
         });
         const cart = response.data;
-        console.log("from uProvider",cart)
+        console.log("from uProvider", cart);
         return cart;
       } catch (e) {
         console.log(e);
@@ -171,9 +171,27 @@ export default function UserProvider(props) {
         );
       }
     },
-    deleteCartItems:async()=>{
-
-    }
+    deleteCartItems: async (product_id) => {
+      try {
+        const response = await axios.delete(
+          BASE_API_URL + `/shoppingcart/${product_id}/remove`,
+          {
+            headers: {
+              Authorization: `Bearer ${JSON.parse(
+                localStorage.getItem("accessToken")
+              )}`,
+            },
+          }
+        );
+        const result = response.data;
+        console.log("Item has been deleted", result);
+        toast.success("Item has been deleted");
+        return true;
+      } catch (e) {
+        console.log("error from delete route", e);
+        toast.error("Unexpected error occured , Please try again");
+      }
+    },
   };
 
   return (

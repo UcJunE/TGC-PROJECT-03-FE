@@ -7,7 +7,7 @@ import Button from "react-bootstrap/Button";
 import UserContext from "../contexts/UserContext";
 
 export default function CartItem(props) {
-  const usercontext = useContext(UserContext);
+  const userContext = useContext(UserContext);
 
   const [updateItem, setUpdateItem] = useState("");
   const [updateItemQuantity, setUpdateItemQuantity] = useState("");
@@ -50,10 +50,20 @@ export default function CartItem(props) {
 
   const confirmUpdateItem = async (id, quantity) => {
     let result = await props.confirmUpdateItem(id, quantity);
-    console.log("what does confirmpdate return",result)
+    console.log("what does confirmpdate return", result);
     setUpdateItem("");
     setUpdateItemQuantity(result);
     return result;
+  };
+
+  const confirmRemoveItem = async (product_id) => {
+    let result = await userContext.deleteCartItems(product_id);
+    //the result will be true
+    if (result) {
+      await props.refreshCart();
+    } else {
+      return false;
+    }
   };
 
   return (
@@ -130,9 +140,9 @@ export default function CartItem(props) {
         <div className="col col-2">
           <button
             className="btn btn-sm"
-            // onClick={() => {
-            //   confirmRemoveItem(props.cartItem.jewelry.id);
-            // }}
+            onClick={() => {
+              confirmRemoveItem(props.cartItem.jewelry.id);
+            }}
           >
             Delete
           </button>

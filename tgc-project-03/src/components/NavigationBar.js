@@ -90,6 +90,7 @@ export default function NavigationBar() {
                 key={cartItem.id}
                 cartItem={cartItem}
                 confirmUpdateItem={confirmUpdateItem}
+                refreshCart ={getCartItems}
               />
             );
           })}
