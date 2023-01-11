@@ -146,7 +146,7 @@ export default function Products() {
                         className="mt-3"
                         variant="primary"
                         as={Link}
-                        to={`/products/${product.id}/view`}
+                        to={`/products/${product.id}/info`}
                       >
                         View
                       </Button>

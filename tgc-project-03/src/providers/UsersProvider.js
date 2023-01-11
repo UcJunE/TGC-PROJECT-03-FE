@@ -192,6 +192,7 @@ export default function UserProvider(props) {
         toast.error("Unexpected error occured , Please try again");
       }
     },
+    
   };
 
   return (

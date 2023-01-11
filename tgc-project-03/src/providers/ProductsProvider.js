@@ -67,6 +67,13 @@ export default function ProductsProvider(props) {
     getSelection: () => {
       return searchOptions;
     },
+    getProductById: async (productId) => {
+      console.log("this function getproductbyid RAN ");
+      const response = await axios.get(BASE_API_URL + "/products/" + productId);
+      const product = response.data;
+      console.log("This is the product get fomr PU", product);
+      return product;
+    },
   };
 
   return (

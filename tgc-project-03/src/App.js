@@ -1,9 +1,7 @@
 import React from "react";
 import "./App.css";
 import "bootstrap/dist/css/bootstrap.min.css";
-import Container from "react-bootstrap/Container";
-import Nav from "react-bootstrap/Nav";
-import Navbar from "react-bootstrap/Navbar";
+
 // import react router stuff
 import { BrowserRouter as Router, Routes, Route, Link } from "react-router-dom";
 //import in pages
@@ -37,7 +35,7 @@ function App() {
               }
             />
             <Route
-              path="/product/:productId/view"
+              path="/products/:productId/info"
               element={
                 <ProductsProvider>
                   <ProductDetails />
