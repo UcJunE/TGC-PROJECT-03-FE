@@ -5,7 +5,6 @@ import Container from "react-bootstrap/Container";
 import Nav from "react-bootstrap/Nav";
 import Navbar from "react-bootstrap/Navbar";
 import { FaShoppingCart } from "react-icons/fa";
-import Button from "react-bootstrap/Button";
 import Offcanvas from "react-bootstrap/Offcanvas";
 import NavDropdown from "react-bootstrap/NavDropdown";
 import ListGroup from "react-bootstrap/ListGroup";
@@ -18,7 +17,7 @@ export default function NavigationBar() {
   //state
   const [reload, setReload] = useState(false); // Triggered by cart item
   const [cartItems, setCartItems] = useState([]);
-  const [totalCost, setTotalCost] = useState([]);
+  const [totalCost, setTotalCost] = useState("");
   //for the spinner
   const [cartRender, setCartRender] = useState(false);
 
@@ -90,10 +89,14 @@ export default function NavigationBar() {
                 key={cartItem.id}
                 cartItem={cartItem}
                 confirmUpdateItem={confirmUpdateItem}
-                refreshCart ={getCartItems}
+                refreshCart={getCartItems}
               />
             );
           })}
+          <div className="my-bold mt-3">Total: ${totalCost/ 100}</div>
+          <button className="btn btn-primary btn-sm mt-2" >
+            Checkout
+          </button>
         </ListGroup>
       );
     } else {
