@@ -16,10 +16,11 @@ export default function NavigationBar() {
   const userContext = useContext(UserContext);
 
   //state
+  const [reload, setReload] = useState(false); // Triggered by cart item
   const [cartItems, setCartItems] = useState([]);
   const [totalCost, setTotalCost] = useState([]);
   //for the spinner
-  const [cartLoading, setCartLoading] = useState(false);
+  const [cartRender, setCartRender] = useState(false);
 
   // off canvas cart controls
   const [show, setShow] = useState(false);
@@ -27,10 +28,32 @@ export default function NavigationBar() {
   // Functions
   const handleClose = () => setShow(false);
   const handleShow = () => setShow(true);
+  const navigateTo = useNavigate();
+
+  useEffect(() => {
+    (async () => {
+      if (reload) {
+        // Get cart (reload)
+        setCartRender(false); // Trigger spinner animation
+
+        // Refresh token
+        const valid = await userContext.refreshToken();
+
+        if (!valid) {
+          setShow(false); // Close cart offcanvas if open
+        }
+
+        const cartItems = await userContext.getCartItems();
+        setCartItems(cartItems);
+        setCartRender(true);
+        setReload(false);
+      }
+    })();
+  }, [reload]);
 
   const getCartItems = async () => {
     console.log("get cart item");
-    setCartLoading(false);
+    setCartRender(false);
 
     const validToken = await userContext.refreshToken();
     if (!validToken) {
@@ -41,7 +64,18 @@ export default function NavigationBar() {
 
     const cartItems = await userContext.getCartItems();
     setCartItems(cartItems);
-    setCartLoading(true);
+    console.log("this is cart item", cartItems);
+    let total = 0;
+    cartItems.map((item) => {
+      let quantity = item.quantity;
+      let cost = item.jewelry.cost;
+      let eachItemTotal = quantity * cost;
+      total = total + eachItemTotal;
+    });
+    console.log("the total cost is >", total);
+    setTotalCost(total);
+    setReload(true);
+    setCartRender(true);
   };
 
   const renderCartItems = () => {
@@ -50,9 +84,6 @@ export default function NavigationBar() {
       return (
         <ListGroup variant="flush">
           {cartItems.map((cartItem) => {
-            {
-              /* console.log(cartItem); */
-            }
             return (
               <CartItem
                 key={cartItem.id}
@@ -76,6 +107,8 @@ export default function NavigationBar() {
     let response = await userContext.updateCartItems(product_id, quantity);
     if (response) {
       toast.success("Item updated");
+      await getCartItems();
+      return quantity;
     } else {
       toast.error("Something went wrong");
       return false;
@@ -138,15 +171,7 @@ export default function NavigationBar() {
           <Offcanvas.Title>Cart</Offcanvas.Title>
         </Offcanvas.Header>
         <Offcanvas.Body>
-          {cartLoading ? renderCartItems() : <h1>Loading</h1>}
-          {/* Checkout */}
-          {/* {cartLoading && cartItems.length ? (
-            <div className="d-flex justify-content-center mt-4">
-              <Button variant="primary">Checkout</Button>
-            </div>
-          ) : (
-            ""
-          )} */}
+          {cartRender ? renderCartItems() : <h1>Loading</h1>}
         </Offcanvas.Body>
       </Offcanvas>
     </React.Fragment>

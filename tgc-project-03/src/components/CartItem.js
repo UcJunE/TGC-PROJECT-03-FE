@@ -50,6 +50,7 @@ export default function CartItem(props) {
 
   const confirmUpdateItem = async (id, quantity) => {
     let result = await props.confirmUpdateItem(id, quantity);
+    console.log("what does confirmpdate return",result)
     setUpdateItem("");
     setUpdateItemQuantity(result);
     return result;
@@ -62,6 +63,7 @@ export default function CartItem(props) {
           <img
             style={{ width: "100%" }}
             src={props.cartItem.jewelry.jewelry_thumbnail_url}
+            alt="product-img"
           ></img>
         </div>
         <div className="col col-6">

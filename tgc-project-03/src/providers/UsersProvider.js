@@ -139,7 +139,7 @@ export default function UserProvider(props) {
           },
         });
         const cart = response.data;
-
+        console.log("from uProvider",cart)
         return cart;
       } catch (e) {
         console.log(e);
