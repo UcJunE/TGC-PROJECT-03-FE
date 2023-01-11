@@ -71,6 +71,7 @@ export default function NavigationBar() {
       let cost = item.jewelry.cost;
       let eachItemTotal = quantity * cost;
       total = total + eachItemTotal;
+      return total;
     });
     console.log("the total cost is >", total);
     setTotalCost(total);
@@ -113,11 +114,10 @@ export default function NavigationBar() {
       toast.error("Something went wrong");
       return false;
     }
-    console.log(
-      "this is the data pass from child to parent and to provider",
-      product_id,
-      quantity
-    );
+  };
+
+  const errorBox = () => {
+    toast.error("Please register before to proceed");
   };
 
   return (
@@ -153,11 +153,16 @@ export default function NavigationBar() {
               </Nav>
             ) : (
               <Nav className="ms-auto">
-                <Nav.Link eventKey="2" as={Link} to="/register">
+                <Nav.Link
+                  onClick={errorBox}
+                  eventKey="3"
+                  as={Link}
+                  to="/register"
+                >
                   <FaShoppingCart style={{ fontSize: "30px" }} />
                   <span className="ms-2">Shopping Cart</span>
                 </Nav.Link>
-                <Nav.Link eventKey="1" as={Link} to="/login">
+                <Nav.Link eventKey="4" as={Link} to="/login">
                   Login
                 </Nav.Link>
               </Nav>
@@ -177,17 +182,3 @@ export default function NavigationBar() {
     </React.Fragment>
   );
 }
-
-{
-  /* <Nav.Link eventKey="3" onClick={userContext.logoutUser}>
-Logout
-</Nav.Link> */
-}
-
-{
-  /* <Nav.Link eventKey="1" as={Link} to="/register">
-register
-</Nav.Link> */
-}
-
-//default link if haven authenticate

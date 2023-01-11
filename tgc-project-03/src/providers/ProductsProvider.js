@@ -6,7 +6,7 @@ import axios from "axios";
 import ProductContext from "../contexts/ProductContext";
 
 const BASE_API_URL =
-  "https://8888-ucjune-tgcproject03expr-rrie69uigi5.ws-us81.gitpod.io/api";
+  "https://8888-ucjune-tgcproject03expr-rrie69uigi5.ws-us82.gitpod.io/api";
 
 export default function ProductsProvider(props) {
   //states

@@ -7,7 +7,7 @@ import "react-toastify/dist/ReactToastify.css";
 import UserContext from "../contexts/UserContext";
 
 const BASE_API_URL =
-  "https://8888-ucjune-tgcproject03expr-rrie69uigi5.ws-us81.gitpod.io/api";
+  "https://8888-ucjune-tgcproject03expr-rrie69uigi5.ws-us82.gitpod.io/api";
 
 export default function UserProvider(props) {
   const navigateTo = useNavigate();
@@ -171,6 +171,9 @@ export default function UserProvider(props) {
         );
       }
     },
+    deleteCartItems:async()=>{
+
+    }
   };
 
   return (
