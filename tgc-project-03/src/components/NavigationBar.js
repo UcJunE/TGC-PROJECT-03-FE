@@ -93,8 +93,8 @@ export default function NavigationBar() {
               />
             );
           })}
-          <div className="my-bold mt-3">Total: ${totalCost/ 100}</div>
-          <button className="btn btn-primary btn-sm mt-2" >
+          <div className="my-bold mt-3">Total: ${totalCost / 100}</div>
+          <button className="btn btn-primary btn-sm mt-2" onClick={checkout}>
             Checkout
           </button>
         </ListGroup>
@@ -121,7 +121,12 @@ export default function NavigationBar() {
   };
 
   const errorBox = () => {
-    toast.error("Please register before to proceed");
+    toast.error("Please register to proceed");
+  };
+
+  const checkout = () => {
+    setShow(false); // Close cart offcanvas
+    navigateTo("/checkout");
   };
 
   return (

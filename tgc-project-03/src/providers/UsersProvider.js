@@ -148,8 +148,8 @@ export default function UserProvider(props) {
     },
     updateCartItems: async (product_id, quantity) => {
       try {
-        let response = await axios.post(
-          BASE_API_URL + `/shoppingcart/${product_id}/quantity/update`,
+        let response = await axios.put(
+          BASE_API_URL + `/shoppingcart/${product_id}/update`,
           {
             newQuantity: parseInt(quantity),
           },
@@ -192,7 +192,66 @@ export default function UserProvider(props) {
         toast.error("Unexpected error occured , Please try again");
       }
     },
-    
+    addCartItems: async (product_id, quantity) => {
+      //1st check if the user alr login
+      if (!userContext.checkIfAuthenticated()) {
+        setRedirectTo(`/products/${product_id}/info`);
+        toast.error("Please login first before add to cart");
+        navigateTo("/login");
+      } else {
+        try {
+          //before adding to cart , check for refresh token whether it is still valid, if alr expired den assign new token to client
+          await userContext.refreshToken();
+          console.log("before add cart"); // it went here
+          const response = await axios.post(
+            BASE_API_URL + `/shoppingcart/${product_id}/add`,
+            {
+              quantity: parseInt(quantity),
+            },
+            {
+              headers: {
+                Authorization: `Bearer ${JSON.parse(
+                  localStorage.getItem("accessToken")
+                )}`,
+              },
+            }
+          );
+          const result = response.data;
+          console.log("this is the data after add cart", result);
+          // console.log("success");
+          toast.success("Cart item added");
+        } catch (e) {
+          console.log("error adding cart", e);
+          toast.error(
+            "An error occured while adding to cart , please try again"
+          );
+        }
+      }
+    },
+    checkout: async () => {
+      //1st  retrieve the cart
+      try {
+        const allCartItems = await userContext.getCartItems();
+        // check if the cart is empty or not
+        if (!allCartItems || !allCartItems.length) {
+          toast.error("An error occured while checking out , please try again");
+          return false;
+        } else {
+          const response = await axios.get(BASE_API_URL + "/checkout", {
+            headers: {
+              Authorization: `Bearer ${JSON.parse(
+                localStorage.getItem("accessToken")
+              )}`,
+            },
+          });
+          let result = response.data;
+          console.log("2nd layer result after checkout =>", result);
+          return result;
+        }
+      } catch (e) {
+        console.log("Fail to checkout =>", e);
+      }
+    },
   };
 
   return (
