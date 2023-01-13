@@ -14,9 +14,11 @@ export default function UserProvider(props) {
 
   //state
   const [redirectTo, setRedirectTo] = useState("");
+  const [name, setName]=useState("")
 
   //user context
   const userContext = {
+    name,
     checkIfAuthenticated: () => {
       // console.log("check run from nav , userProvider");
       if (
@@ -53,7 +55,7 @@ export default function UserProvider(props) {
           BASE_API_URL + "/account/login",
           userData
         );
-        console.log("from user provider", response.data.status);
+        console.log("from user provider", response.data);
         if (response.data.status === "fail") {
           toast.error("Invalid username / password");
           return false;
@@ -61,10 +63,12 @@ export default function UserProvider(props) {
           //   console.log("it went here");
           const accessToken = response.data.accessToken;
           const refreshToken = response.data.refreshToken;
+          const username = response.data.username
+          setName(username)
 
           localStorage.setItem("accessToken", JSON.stringify(accessToken));
           localStorage.setItem("refreshToken", JSON.stringify(refreshToken));
-
+          console.log(username)
           //redirect to pages that intended to browse
           if (redirectTo) {
             navigateTo(redirectTo);
@@ -72,7 +76,7 @@ export default function UserProvider(props) {
           } else {
             navigateTo("/");
           }
-          return true;
+          return true ;
         }
       } catch (e) {
         console.log(e);
@@ -250,6 +254,22 @@ export default function UserProvider(props) {
         }
       } catch (e) {
         console.log("Fail to checkout =>", e);
+      }
+    },
+    getOrder: async () => {
+      try {
+        const response = await axios.get(BASE_API_URL + "/order", {
+          headers: {
+            Authorization: `Bearer ${JSON.parse(
+              localStorage.getItem("accessToken")
+            )}`,
+          },
+        });
+        let result = response.data
+        console.log("this is the order =>", result)
+        return result
+      } catch (e) {
+        console.log("error retrieving order =>", e);
       }
     },
   };

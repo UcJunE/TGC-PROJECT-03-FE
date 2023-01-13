@@ -14,6 +14,7 @@ import Login from "./pages/Login";
 import ProductsProvider from "./providers/ProductsProvider";
 import UserProvider from "./providers/UsersProvider";
 //import components
+import Order from "./components/Order";
 import Checkout from "./components/Checkout";
 import Toastify from "./components/Toastify";
 import NavigationBar from "./components/NavigationBar";
@@ -49,6 +50,7 @@ function App() {
 
             {/* checkout route */}
             <Route path="/checkout" element={<Checkout />} />
+            <Route path="/order" element={<Order />} />
           </Routes>
         </UserProvider>
       </Router>

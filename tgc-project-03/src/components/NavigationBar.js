@@ -102,7 +102,29 @@ export default function NavigationBar() {
     } else {
       return (
         <div className="container mt-4">
-          <h5>There are no items in your cart</h5>
+          <div className="card-body">
+            <div className="col-sm-12 text-center">
+              <img
+                src="https://i.imgur.com/dCdflKN.png"
+                width="130"
+                height="130"
+                className="img-fluid mb-4 mr-3"
+              />
+              <h3 className="mt-2">
+                <strong>Opps...</strong>
+              </h3>
+              <h4>Your cart is empty</h4>
+              <h6 className="my-3">Add something to make you happy</h6>
+              <button
+                className="btn btn-primary mt-2"
+                onClick={() => {
+                  return navigateTo("/"), setShow(false);
+                }}
+              >
+                Explore
+              </button>
+            </div>
+          </div>
         </div>
       );
     }
@@ -148,7 +170,9 @@ export default function NavigationBar() {
                 </Nav.Link>
                 {/* Accounts */}
                 <NavDropdown title="Account">
-                  <NavDropdown.Item eventKey="2" as={Link} to="/orders">
+                  <NavDropdown.Item>Hi , {userContext.name}</NavDropdown.Item>
+                  <NavDropdown.Divider/>
+                  <NavDropdown.Item eventKey="2" as={Link} to="/order">
                     Orders
                   </NavDropdown.Item>
                   <NavDropdown.Divider />
