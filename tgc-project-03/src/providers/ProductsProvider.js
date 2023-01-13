@@ -43,7 +43,13 @@ export default function ProductsProvider(props) {
   };
 
   const resetSearch = async () => {
-    setSearchQuery({});
+    setSearchQuery({
+      name: "",
+      color_id: "",
+      materials: "",
+      min_cost: "",
+      max_cost: "",
+    });
     let response = await axios.get(BASE_API_URL + "/products");
     setProducts(response.data);
     console.log("This is what i get after clear the query", searchQuery);
