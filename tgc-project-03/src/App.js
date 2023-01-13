@@ -17,6 +17,7 @@ import UserProvider from "./providers/UsersProvider";
 import Order from "./components/Order";
 import Checkout from "./components/Checkout";
 import Success from "./components/Success";
+import Error from "./components/Error";
 import Toastify from "./components/Toastify";
 import NavigationBar from "./components/NavigationBar";
 
@@ -52,6 +53,7 @@ function App() {
             {/* checkout route */}
             <Route path="/checkout" element={<Checkout />} />
             <Route path="/checkout/success" element={<Success />} />
+            <Route path="/checkout/error" element={<Error />} />
             <Route path="/order" element={<Order />} />
           </Routes>
         </UserProvider>
