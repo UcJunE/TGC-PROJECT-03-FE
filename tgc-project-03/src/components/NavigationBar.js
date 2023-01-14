@@ -155,8 +155,8 @@ export default function NavigationBar() {
     <React.Fragment>
       <Navbar bg="light" expand="lg">
         <Container>
-          <Navbar.Brand className="logo" as={Link} to="/">
-            THINKING
+          <Navbar.Brand className="logo-container" as={Link} to="/">
+            <img className="logo" src={require("../assets/brand-logo.png")} alt="brand-img" />
           </Navbar.Brand>
           <Navbar.Toggle aria-controls="basic-navbar-nav" />
           <Navbar.Collapse id="basic-navbar-nav">
@@ -170,8 +170,8 @@ export default function NavigationBar() {
                 </Nav.Link>
                 {/* Accounts */}
                 <NavDropdown title="Account">
-                  <NavDropdown.Item>Hi , {userContext.name}</NavDropdown.Item>
-                  <NavDropdown.Divider/>
+                  <NavDropdown.Item>Hi {userContext.name}</NavDropdown.Item>
+                  <NavDropdown.Divider />
                   <NavDropdown.Item eventKey="2" as={Link} to="/order">
                     Orders
                   </NavDropdown.Item>
@@ -185,7 +185,7 @@ export default function NavigationBar() {
                 </NavDropdown>
               </Nav>
             ) : (
-              <Nav className="ms-auto">
+              <Nav className="ms-auto mt-3">
                 <Nav.Link
                   onClick={errorBox}
                   eventKey="3"

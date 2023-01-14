@@ -16,7 +16,7 @@ export default function Success() {
         <div className="card success-card">
           <div className="container success-card-container">
             <img
-              src={require("../images/success-img.png")}
+              src={require("../assets/success-img.png")}
               className="img-fluid success-img my-3"
               alt="success-img"
             />
@@ -27,6 +27,7 @@ export default function Success() {
             <br />
             we'll be in touch shortly!
           </p>
+          <p>for spinner</p>
         </div>
       </div>
     </React.Fragment>

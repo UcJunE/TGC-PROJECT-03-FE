@@ -20,6 +20,7 @@ import Success from "./components/Success";
 import Error from "./components/Error";
 import Toastify from "./components/Toastify";
 import NavigationBar from "./components/NavigationBar";
+import Footer from "./components/Footer";
 
 function App() {
   return (
@@ -58,6 +59,7 @@ function App() {
           </Routes>
         </UserProvider>
       </Router>
+      <Footer />
     </React.Fragment>
   );
 }

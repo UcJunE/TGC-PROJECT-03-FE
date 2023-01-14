@@ -6,14 +6,13 @@ export default function Toastify() {
   return (
     <ToastContainer
       position="top-right"
-      autoClose={1800}
+      autoClose={1500}
       hideProgressBar={false}
       newestOnTop={false}
       closeOnClick
       rtl={false}
       pauseOnFocusLoss
       draggable
-      pauseOnHover
       theme="light"
     />
   );

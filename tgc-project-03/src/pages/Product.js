@@ -2,7 +2,6 @@ import React, { useContext } from "react";
 import { Link } from "react-router-dom";
 import Accordion from "react-bootstrap/Accordion";
 import Card from "react-bootstrap/Card";
-import Col from "react-bootstrap/Col";
 import Button from "react-bootstrap/Button";
 import Form from "react-bootstrap/Form";
 import FloatingLabel from "react-bootstrap/FloatingLabel";
@@ -54,6 +53,12 @@ export default function Products() {
 
   return (
     <React.Fragment>
+      <div id="landing-container" className="container">
+        <video autoPlay loop muted id="landing-video">
+          {/* <source src={require("../assets/landing-vid.mp4")} type="video/mp4" /> */}
+        </video>
+      </div>
+
       <Accordion defaultActiveKey="0">
         <Accordion.Item eventKey="0">
           <Accordion.Header>Search</Accordion.Header>

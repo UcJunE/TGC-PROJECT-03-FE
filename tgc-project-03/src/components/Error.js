@@ -16,7 +16,7 @@ export default function Success() {
         <div className="card success-card">
           <div className="container success-card-container">
             <img
-              src={require("../images/error-img.png")}
+              src={require("../assets/error-img.png")}
               className="img-fluid success-img my-3"
               alt="success-img"
             />
@@ -26,6 +26,7 @@ export default function Success() {
             Please check your security code , card details and connection and
             try again
           </p>
+          <p>for spinner</p>
         </div>
       </div>
     </React.Fragment>
