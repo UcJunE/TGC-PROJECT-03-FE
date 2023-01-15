@@ -93,7 +93,7 @@ export default function UserProvider(props) {
         localStorage.removeItem("refreshToken");
 
         if (option !== "expire") {
-          toast.success("Logged out successfully");
+          toast.success("Thanks for shopping with us , Hope to see you again");
           navigateTo("/");
         }
       } catch (e) {

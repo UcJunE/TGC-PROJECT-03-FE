@@ -4,7 +4,7 @@ import { toast } from "react-toastify";
 import Container from "react-bootstrap/Container";
 import Nav from "react-bootstrap/Nav";
 import Navbar from "react-bootstrap/Navbar";
-import { FaShoppingCart } from "react-icons/fa";
+import { FaShoppingCart, FaUser } from "react-icons/fa";
 import Offcanvas from "react-bootstrap/Offcanvas";
 import NavDropdown from "react-bootstrap/NavDropdown";
 import ListGroup from "react-bootstrap/ListGroup";
@@ -109,14 +109,17 @@ export default function NavigationBar() {
                 width="130"
                 height="130"
                 className="img-fluid mb-4 mr-3"
+                alt="cart-img"
               />
-              <h3 className="mt-2">
+              <h3 className="mt-2 cart-text">
                 <strong>Opps...</strong>
               </h3>
-              <h4>Your cart is empty</h4>
-              <h6 className="my-3">Add something to make you happy</h6>
+              <h4 className="cart-text">Your cart is empty</h4>
+              <h6 className="my-3 cart-text">
+                Add something to make you happy
+              </h6>
               <button
-                className="btn btn-primary mt-2"
+                className="btn product-btn mt-2"
                 onClick={() => {
                   return navigateTo("/"), setShow(false);
                 }}
@@ -153,10 +156,14 @@ export default function NavigationBar() {
 
   return (
     <React.Fragment>
-      <Navbar bg="light" expand="lg">
+      <Navbar className="nav-container" expand="lg">
         <Container>
           <Navbar.Brand className="logo-container" as={Link} to="/">
-            <img className="logo" src={require("../assets/images/brand-logo.png")} alt="brand-img" />
+            <img
+              className="logo"
+              src={require("../assets/images/brand-logo.png")}
+              alt="brand-img"
+            />
           </Navbar.Brand>
           <Navbar.Toggle aria-controls="basic-navbar-nav" />
           <Navbar.Collapse id="basic-navbar-nav">
@@ -166,7 +173,7 @@ export default function NavigationBar() {
                 {/* Shopping cart */}
                 <Nav.Link eventKey="1" onClick={getCartItems}>
                   <FaShoppingCart style={{ fontSize: "30px" }} />
-                  <span className="ms-2">Shopping Cart</span>
+                  <span className="ms-2 nav-text">Shopping Cart</span>
                 </Nav.Link>
                 {/* Accounts */}
                 <NavDropdown title="Account">
@@ -193,10 +200,11 @@ export default function NavigationBar() {
                   to="/register"
                 >
                   <FaShoppingCart style={{ fontSize: "30px" }} />
-                  <span className="ms-2">Shopping Cart</span>
+                  <span className="ms-2 nav-text">Shopping Cart</span>
                 </Nav.Link>
                 <Nav.Link eventKey="4" as={Link} to="/login">
-                  Login
+                <FaUser style={{ fontSize: "30px" }}/>
+                <span className="ms-2 nav-text">Login</span>
                 </Nav.Link>
               </Nav>
             )}

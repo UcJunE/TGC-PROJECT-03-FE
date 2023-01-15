@@ -1,4 +1,67 @@
-/* mobile mode */
+/* font-family: 'Montserrat', sans-serif;
+font-family: 'Nanum Gothic Coding', monospace; */
+@import url("https://fonts.googleapis.com/css2?family=Montserrat&family=Nanum+Gothic+Coding:wght@400;700&display=swap");
+
+body {
+  background-image: linear-gradient(#ffd4b2, white) !important;
+}
+
+.nav-container {
+  background-image: linear-gradient(75deg, #fff8ea, #ffd4b2) !important;
+}
+
+.product-title {
+  font-family: "Nanum Gothic Coding", monospace;
+  font-size: 1.3rem;
+  font-weight: 700;
+}
+
+.product-text {
+  font-family: "Nanum Gothic Coding", monospace;
+  font-size: 0.8rem;
+}
+
+.card {
+  overflow: hidden;
+  background-image: linear-gradient(60deg, #eae0da, #fff, #eae0da) !important;
+}
+.card-img-top:hover {
+  transform: scale(1.5);
+  transition: all 1.2s;
+}
+
+.accordion-button {
+  background-image: linear-gradient(60deg, #eae0da, #fff, #eae0da) !important;
+}
+
+.search-container {
+  background-image: linear-gradient(60deg, #eae0da, #fff, #eae0da) !important;
+}
+
+.product-btn {
+  color: #000 !important;
+  /* background-color: #eae0da !important; */
+  background-image: linear-gradient(60deg, #eae0da, #fff, #fff) !important;
+  border-radius: 3% !important;
+  border: none !important;
+  display: inline-block;
+  font-family: "Nanum Gothic Coding", monospace !important;
+  cursor: pointer;
+  box-shadow: inset 0 0 0 0 #aabbb8;
+  -webkit-transition: ease-out 0.4s !important;
+  -moz-transition: ease-out 0.4s !important;
+  transition: ease-out 0.4s !important;
+}
+
+.product-btn:hover {
+  border: none;
+  box-shadow: inset 0 0 0 50px #fff;
+}
+
+.product-msg {
+  font-family: "Montserrat", sans-serif;
+  font-size: 1.3rem !important;
+}
 
 * {
   margin: 0;
@@ -19,6 +82,16 @@
   height: 100%;
 }
 
+.landing-box {
+  padding-left: 0px !important;
+}
+
+.landing-pic {
+  height: calc(100vh - 62px);
+  background-image: url("./assets/images/landing-page.png");
+  background-position: center;
+  background-size: cover;
+}
 .landing-video {
   width: 100%;
   height: 100vh;
@@ -124,6 +197,26 @@
   display: none;
 }
 
+/* cart box */
+.offcanvas-body {
+  background-image: linear-gradient(60deg, #eae0da, #fff, #eae0da) !important;
+}
+
+.cart-text {
+  font-family: "Montserrat", sans-serif;
+  font-size: 1.3rem;
+  font-weight: 700;
+}
+
+.nav-item {
+  font-family: "Montserrat", sans-serif;
+  font-size: 1.3rem;
+}
+.nav-text {
+  font-family: "Montserrat", sans-serif;
+  font-size: 1.3rem;
+}
+
 /* for tablet medium screen size  768px above */
 @media screen and (min-width: 768px) {
   #login-main-box {
@@ -218,6 +311,10 @@
 /* 1440px screen size and above */
 
 @media screen and (min-width: 1440px) {
+  .landing-pic {
+    width: 100vw;
+  }
+
   #login-main-box {
     width: 100%;
   }
@@ -260,7 +357,7 @@
   }
 }
 
-@media screen and (min-width: 1920px){
+@media screen and (min-width: 1920px) {
   #register-container {
     margin-left: 620px;
     width: 320px;
