@@ -59,6 +59,9 @@ export default function Products() {
           src={require("../assets/images/landing-page.png")}
           alt="landing-img"
         />
+        <Button href="#product-section" className="hero-btn">
+          Shop Now
+        </Button>
       </div>
 
       <div id="landing-container" className="container">
@@ -70,10 +73,12 @@ export default function Products() {
         </video>
       </div>
 
-      <div className="container my-4">
-        <Accordion>
+      <div className="container my-4 " id="product-section">
+        <Accordion >
           <Accordion.Item eventKey="0">
-            <Accordion.Header  className="search-container">Search</Accordion.Header>
+            <Accordion.Header className="search-container">
+              Search
+            </Accordion.Header>
             <Accordion.Body className="search-container">
               <FloatingLabel className="mb-3" label="Enter name of product">
                 <Form.Control
@@ -143,7 +148,7 @@ export default function Products() {
           </Accordion.Item>
         </Accordion>
 
-        <div className="col col-lg">
+        <div className="col col-lg" >
           <div className="row px-5 mt-4">
             {allProducts.length ? (
               allProducts.map((product) => {

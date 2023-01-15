@@ -1,7 +1,7 @@
 /* font-family: 'Montserrat', sans-serif;
 font-family: 'Nanum Gothic Coding', monospace; */
-@import url("https://fonts.googleapis.com/css2?family=Montserrat&family=Nanum+Gothic+Coding:wght@400;700&display=swap");
-
+/* font-family: 'Rock Salt', cursive; */
+@import url("https://fonts.googleapis.com/css2?family=Montserrat&family=Nanum+Gothic+Coding:wght@400;700&family=Rock+Salt&display=swap");
 body {
   background-image: linear-gradient(#ffd4b2, white) !important;
 }
@@ -85,6 +85,30 @@ body {
 
 .landing-box {
   padding-left: 0px !important;
+  display: flex;
+  position: relative;
+}
+
+.hero-btn {
+  border: none !important;
+  background-color: #ffd4b2 !important;
+  color: #000 !important;
+  position: absolute;
+  width: 120px;
+  margin-top: 50vh;
+  margin-left: 40vw;
+  font-family: 'Montserrat', sans-serif !important;
+  font-weight: 700 !important;
+  cursor: pointer;
+  box-shadow: inset 0 0 0 0 #aabbb8;
+  -webkit-transition: ease-out 0.4s !important;
+  -moz-transition: ease-out 0.4s !important;
+  transition: ease-out 0.4s !important;
+}
+
+.hero-btn:hover{
+  background-color: #fff8ea !important;
+  box-shadow: inset 0 0 0 50px #fff;
 }
 
 .landing-pic {
