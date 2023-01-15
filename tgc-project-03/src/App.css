@@ -46,12 +46,14 @@ body {
   border-radius: 3% !important;
   border: none !important;
   display: inline-block;
-  font-family: "Nanum Gothic Coding", monospace !important;
+  font-family: "Montserrat", sans-serif !important;
+  font-weight: bold !important;
   cursor: pointer;
   box-shadow: inset 0 0 0 0 #aabbb8;
   -webkit-transition: ease-out 0.4s !important;
   -moz-transition: ease-out 0.4s !important;
   transition: ease-out 0.4s !important;
+  margin-left: 13%;
 }
 
 .product-btn:hover {
@@ -64,13 +66,12 @@ body {
   font-size: 1.3rem !important;
 }
 
+.no-product-box {
+  text-align: center;
+}
 * {
   margin: 0;
   padding: 0;
-}
-
-.detail-img {
-  width: 360px;
 }
 
 .logo {
@@ -97,7 +98,7 @@ body {
   width: 120px;
   margin-top: 50vh;
   margin-left: 40vw;
-  font-family: 'Montserrat', sans-serif !important;
+  font-family: "Montserrat", sans-serif !important;
   font-weight: 700 !important;
   cursor: pointer;
   box-shadow: inset 0 0 0 0 #aabbb8;
@@ -106,7 +107,7 @@ body {
   transition: ease-out 0.4s !important;
 }
 
-.hero-btn:hover{
+.hero-btn:hover {
   background-color: #fff8ea !important;
   box-shadow: inset 0 0 0 50px #fff;
 }
@@ -129,7 +130,7 @@ body {
 .success-body {
   text-align: center;
   padding: 40px 0;
-  background: #ebf0f5;
+  background-image: linear-gradient(#ffd4b2, white) !important;
 }
 
 .success-card-container {
@@ -146,7 +147,7 @@ body {
   padding-top: 10px;
 }
 .success-card {
-  background: white;
+  background: #f8faf5;
   padding: 60px;
   border-radius: 4px;
   box-shadow: 0 2px 3px #c8d0d8;
@@ -154,15 +155,31 @@ body {
   margin: 0 auto;
 }
 
-/* .success-header{
- to be confirm on font sizze and font family
+.success-header {
+  font-family: "Montserrat", sans-serif;
+  font-weight: 700;
 }
 
-.success-text{
-  to be confirm
-} */
+.success-text {
+  font-family: "Montserrat", sans-serif;
+}
 
 /* error page */
+.error-body {
+  width: 100vh !important;
+  text-align: center;
+  padding: 40px 0;
+  background-image: linear-gradient(#ffd4b2, white) !important;
+}
+
+.error-card {
+  background: #f8faf5;
+  padding: 20px;
+  border-radius: 4px;
+  box-shadow: 0 2px 3px #c8d0d8;
+  display: inline-block;
+  margin: 0 auto;
+}
 
 /* login page */
 
@@ -285,8 +302,93 @@ body {
 .shopping-cart:hover {
   color: white;
 }
+
+/* product-detail-page */
+.detail-main-box {
+  height: calc(100vh - 62px) !important;
+  background-image: linear-gradient(40deg, #ffd4b2, white) !important;
+  padding-left: 0px !important;
+  padding-right: 0px !important;
+  box-shadow: 0 0 60px rgba(0, 0, 0, 0.5);
+  overflow: hidden !important;
+}
+
+.detail-img {
+  width: 100%;
+}
+
+.detail-img:hover {
+  transform: scale(1.1);
+  transition: all 1.3s;
+}
+
+.detail-main-title {
+  font-family: "Montserrat", sans-serif;
+  font-weight: bold;
+}
+
+.detail-text {
+  font-family: "Nanum Gothic Coding", monospace;
+}
+.d-btn-box {
+  text-align: center !important;
+}
+
+.d-btn-btn {
+  justify-content: center;
+  margin-bottom: 20px;
+}
+
+.detail-btn {
+  color: #000 !important;
+  background-image: linear-gradient(60deg, #eae0da, #fff) !important;
+  border-radius: 3% !important;
+  border: none !important;
+  display: inline-block;
+  font-family: "Montserrat", sans-serif !important;
+  font-weight: 700 !important;
+  font-size: 1.2rem;
+  width: 100px;
+  cursor: pointer;
+  box-shadow: inset 0 0 0 0 #aabbb8;
+  -webkit-transition: ease-out 0.4s !important;
+  -moz-transition: ease-out 0.4s !important;
+  transition: ease-out 0.4s !important;
+}
+.detail-btn:hover {
+  border: none;
+  box-shadow: inset 0 0 0 50px #eae0da;
+}
+
+.dimg-box {
+  padding-left: 0;
+  padding-right: 0;
+}
+
 /* for tablet medium screen size  768px above */
 @media screen and (min-width: 768px) {
+  .detail-main-box {
+    width: 100% !important;
+  }
+
+  .detail-img {
+    width: 100% !important;
+  }
+
+  .product-btn {
+    margin-left: 120px;
+    width: 120px;
+  }
+
+  .form-box {
+    width: 100%;
+  }
+
+  .hero-btn {
+    margin-left: 330px;
+    width: 200px;
+  }
+
   #login-main-box {
     margin-top: 100px;
     background-image: linear-gradient(
@@ -334,6 +436,36 @@ body {
 
 /* for laptop size above */
 @media screen and (min-width: 1024px) {
+  .d-btn-box {
+    text-align: left !important;
+  }
+
+  .d-btn-btn {
+    margin-bottom: 20px !important;
+    margin-right: 200px;
+  }
+
+  .detail-main-box {
+    width: 100% !important;
+  }
+
+  .detail-img {
+    width: 100% !important;
+    margin-top: 70px;
+  }
+
+  .accordion {
+    width: 420px;
+    margin-left: 30%;
+  }
+  .product-btn {
+    margin-left: 40px;
+  }
+
+  .hero-btn {
+    margin-left: 500px;
+  }
+
   #login-main-box {
     width: 100%;
   }
@@ -379,6 +511,48 @@ body {
 /* 1440px screen size and above */
 
 @media screen and (min-width: 1440px) {
+  .d-btn-btn {
+    margin-bottom: 20px !important;
+    width: 250px !important;
+    margin-left: 12px !important;
+  }
+
+  .detail-btn {
+    width: 250px;
+  }
+
+  .detail-main-title {
+    font-size: 1.8rem;
+  }
+
+  .detail-text {
+    font-size: 1.2rem;
+  }
+
+  .detail-main-box {
+    margin-top: 50px !important;
+  }
+
+  .detail-img {
+    width: 95% !important;
+    margin-top: 23px !important;
+  }
+
+  .accordion {
+    width: 420px;
+    margin-left: 33%;
+  }
+  .product-btn {
+    margin-left: 40px;
+  }
+
+  .hero-btn {
+    width: 200px;
+    font-size: 2rem !important;
+    margin-left: 45vw;
+    margin-top: 20vh;
+  }
+
   .landing-pic {
     width: 100vw;
   }

@@ -74,7 +74,7 @@ export default function Products() {
       </div>
 
       <div className="container my-4 " id="product-section">
-        <Accordion >
+        <Accordion>
           <Accordion.Item eventKey="0">
             <Accordion.Header className="search-container">
               Search
@@ -112,7 +112,7 @@ export default function Products() {
                 </Form.Select>
               </Form.Group>
               <div className="container px-0 d-flex">
-                <FloatingLabel className="d-flex mb-3" label="Min cost">
+                <FloatingLabel className="d-flex mb-3 form-box" label="Min cost">
                   <Form.Control
                     type="text"
                     placeholder="Min cost"
@@ -121,7 +121,7 @@ export default function Products() {
                     onChange={updateFormField}
                   />
                 </FloatingLabel>
-                <FloatingLabel className="mb-3 mx-2" label="Max cost">
+                <FloatingLabel className="mb-3 mx-2 form-box" label="Max cost">
                   <Form.Control
                     type="text"
                     placeholder="Max cost"
@@ -139,7 +139,7 @@ export default function Products() {
                 Submit
               </button>
               <button
-                className="btn product-btn mx-5"
+                className="btn product-btn"
                 onClick={productContext.resetSearchProducts}
               >
                 Reset
@@ -148,7 +148,7 @@ export default function Products() {
           </Accordion.Item>
         </Accordion>
 
-        <div className="col col-lg" >
+        <div className="col col-lg">
           <div className="row px-5 mt-4">
             {allProducts.length ? (
               allProducts.map((product) => {
@@ -163,15 +163,15 @@ export default function Products() {
                         <Card.Title className="product-title">
                           {product.name}
                         </Card.Title>
-                        {/* <Card.Text className="product-text">
-                        From ${(product.cost / 100).toFixed(2)}
-                      </Card.Text> */}
+                        <Card.Text className="product-text">
+                          From ${(product.cost / 100).toFixed(2)}
+                        </Card.Text>
                         <Button
-                          className="mt-3 product-btn"
+                          className="mt-3 cart-btn"
                           as={Link}
                           to={`/products/${product.id}/info`}
                         >
-                          From ${(product.cost / 100).toFixed(2)}
+                         VIEW
                         </Button>
                       </Card.Body>
                     </Card>
@@ -179,7 +179,7 @@ export default function Products() {
                 );
               })
             ) : (
-              <div className="mt-4 mb-5">
+              <div className="mt-4 mb-5 no-product-box">
                 <span className="product-msg">No products found</span>
               </div>
             )}

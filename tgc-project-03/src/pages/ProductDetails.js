@@ -59,69 +59,75 @@ export default function ProductDetails(props) {
   return (
     <React.Fragment>
       {loaded ? (
-        <div className="container mt-5">
-          <img
-            className="detail-img"
-            src={product.jewelry_img_url}
-            alt="product-img"
-            style={{}}
-          />
-          <hr />
-          <div className="container mt-3 mb-3">
-            <h1>{product.name}</h1>
-          </div>
-          <div className="container mt-2">
-            <h3>$ {product.cost / 100}</h3>
-          </div>
-          <div className="container mt-4">
-            <h5>Product Description</h5>
-          </div>
-          <div className="container mt-2">
-            <p>{product.description}</p>
-          </div>
-          <hr />
-          <div className="container">
-            <h5>Product Info</h5>
-          </div>
-          <div className="container">
-            <p>Design : {product.design}</p>
-            <p>Material : {product.materials[0].material_type}</p>
-            <p>Colour : {product.color.name}</p>
-            <p>Weight : {product.weight / 100} g</p>
-            <p>
-              Dimensions: {product.width}mm (Width) X {product.height}mm
-              (Height)
-            </p>
-            <p>Chain : Not included</p>
-          </div>
-          <hr />
-          <div className="container mt-2">
-            <h5>Quantity</h5>
-          </div>
-          <div className="d-flex mt-4">
-            <button className="btn btn-sm my-btn" onClick={increment}>
-              +
-            </button>
-            <input
-              type="number"
-              style={{ width: "40px", textAlign: "center" }}
-              className="form-input form-input-sm ms-2 me-2"
-              value={updateItemQuantity}
-              disabled
+        <div className="row detail-main-box">
+          <div className="container mt-5 dimg-box col-md-12 col-lg-6">
+            <img
+              className="detail-img"
+              src={product.jewelry_img_url}
+              alt="product-img"
             />
-            <button className="btn btn-sm my-btn" onClick={decrement}>
-              -
-            </button>
-            <button
-              className="btn btn-sm btn-primary ms-2"
-              onClick={() => {
-                addTocart(product.id, updateItemQuantity);
-              }}
-            >
-              Add to Cart
-            </button>
           </div>
-          <div className="container py-5"></div>
+          <div className="col col-lg-6">
+            <div className="container mt-5 mb-3">
+              <h1 className="detail-main-title">{product.name}</h1>
+            </div>
+            <div className="container mt-2">
+              <h3 className="detail-main-title">$ {product.cost / 100}</h3>
+            </div>
+            <div className="container mt-4">
+              <h5 className="detail-main-title">Product Description</h5>
+            </div>
+            <div className="container mt-2">
+              <p className="detail-text">{product.description}</p>
+            </div>
+            <hr />
+            <div className="container">
+              <h5 className="detail-main-title">Product Info</h5>
+            </div>
+            <div className="container">
+              <p className="detail-text">Design : {product.design}</p>
+              <p className="detail-text">
+                Material : {product.materials[0].material_type}
+              </p>
+              <p className="detail-text">Colour : {product.color.name}</p>
+              <p className="detail-text">Weight : {product.weight / 100} g</p>
+              <p className="detail-text">
+                Dimensions: {product.width}mm (Width) X {product.height}mm
+                (Height)
+              </p>
+              <p className="detail-text">Chain : Not included</p>
+            </div>
+            <hr />
+            <div className="container mt-2 d-btn-box">
+              <h5 className="detail-main-title">Quantity</h5>
+            </div>
+            <div className="d-flex mt-4 d-btn-btn">
+              <button className="btn btn-sm detail-btn" onClick={increment}>
+                +
+              </button>
+              <input
+                type="number"
+                style={{ width: "40px", textAlign: "center" }}
+                className="form-input form-input-sm ms-2 me-2 detail-input-box"
+                value={updateItemQuantity}
+                disabled
+              />
+              <button className="btn btn-sm detail-btn" onClick={decrement}>
+                -
+              </button>
+            </div>
+            <div className="container d-btn-box">
+              <button
+                className="btn btn-sm detail-btn"
+                onClick={() => {
+                  addTocart(product.id, updateItemQuantity);
+                }}
+              >
+                Add to Cart
+              </button>
+            </div>
+            <div className="container py-4"></div>
+          </div>
         </div>
       ) : (
         <h1>Loading</h1>
