@@ -1,4 +1,10 @@
 /* mobile mode */
+
+* {
+  margin: 0;
+  padding: 0;
+}
+
 .detail-img {
   width: 360px;
 }
@@ -61,25 +67,73 @@
 
 /* login page */
 
+#login-main-box {
+  box-shadow: 0 0 60px rgba(0, 0, 0, 0.5);
+  background-image: linear-gradient(
+    45deg,
+    #eae0da 30%,
+    #fff,
+    #eac7c7
+  ) !important;
+}
+
 #login-box {
   padding-left: 0;
   padding-right: 0;
 }
 
 .login-img {
+  padding-left: 0 !important;
+  padding-right: 0 !important;
   height: 400px;
-  width: 390px;
+  width: 100%;
   object-fit: cover;
 }
 
 #login-container {
   width: 300px;
 }
-/* for table size above */
-@media screen and (min-width: 767px) {
+
+/* register page */
+#register-main-box {
+  box-shadow: 0 0 60px rgba(0, 0, 0, 0.5);
+  background-image: linear-gradient(
+    45deg,
+    #eae0da 30%,
+    #fff,
+    #eac7c7
+  ) !important;
+}
+
+#register-box {
+  padding-left: 0;
+  padding-right: 0;
+}
+
+.register-img {
+  height: 400px;
+  width: 100%;
+  object-fit: cover;
+}
+
+#register-container {
+  width: 300px;
+}
+
+.hero-vid {
+  display: none;
+}
+
+/* for tablet medium screen size  768px above */
+@media screen and (min-width: 768px) {
   #login-main-box {
-    margin-top: 120px;
-    margin-left: 120px;
+    margin-top: 100px;
+    background-image: linear-gradient(
+      45deg,
+      #eae0da 30%,
+      #fff,
+      #eac7c7
+    ) !important;
   }
 
   #login-box {
@@ -88,13 +142,143 @@
   }
 
   .login-img {
-    height: 400px;
-    width: 500px;
+    width: 100%;
+    object-fit: cover;
+  }
+
+  #login-container {
+    width: 400px;
+  }
+
+  /* register */
+  #register-main-box {
+    margin-top: 50px;
+  }
+
+  #register-box {
+    padding-left: 0;
+    padding-right: 0;
+  }
+
+  .register-img {
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+  }
+
+  #register-container {
+    width: 400px;
+  }
+}
+
+/* for laptop size above */
+@media screen and (min-width: 1024px) {
+  #login-main-box {
+    width: 100%;
+  }
+
+  #login-box {
+    padding-left: 0;
+    padding-right: 0;
+  }
+
+  .login-img {
+    height: 500px;
+    width: 50vw;
     object-fit: cover;
   }
 
   #login-container {
     margin-left: 400px;
-    width: 400px;
+    width: 300px;
+  }
+
+  /* register */
+  #register-main-box {
+    width: 100%;
+  }
+
+  #register-box {
+    padding-left: 0;
+    padding-right: 0;
+  }
+
+  .register-img {
+    height: 100%;
+    width: 50vw;
+    object-fit: cover;
+  }
+
+  #register-container {
+    margin-left: 400px;
+    width: 320px;
+  }
+}
+
+/* 1440px screen size and above */
+
+@media screen and (min-width: 1440px) {
+  #login-main-box {
+    width: 100%;
+  }
+
+  #login-box {
+    padding-left: 0;
+    padding-right: 0;
+  }
+
+  .login-img {
+    height: 500px;
+    width: 50vw;
+    object-fit: cover;
+  }
+
+  #login-container {
+    margin-left: 600px;
+    width: 300px;
+  }
+
+  /* register */
+  #register-main-box {
+    width: 100%;
+  }
+
+  #register-box {
+    padding-left: 0;
+    padding-right: 0;
+  }
+
+  .register-img {
+    height: 100%;
+    width: 50vw;
+    object-fit: cover;
+  }
+
+  #register-container {
+    margin-left: 650px;
+    width: 320px;
+  }
+}
+
+@media screen and (min-width: 1920px){
+  #register-container {
+    margin-left: 620px;
+    width: 320px;
+  }
+  .register-img {
+    height: 100%;
+    width: 35vw;
+    object-fit: cover;
+  }
+
+  #login-container {
+    margin-left: 630px;
+    width: 300px;
+  }
+
+  .login-img {
+    height: 500px;
+    width: 35vw;
+    object-fit: cover;
   }
 }

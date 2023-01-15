@@ -5,8 +5,7 @@ import axios from "axios";
 //context
 import ProductContext from "../contexts/ProductContext";
 
-const BASE_API_URL =
-  "https://8888-ucjune-tgcproject03expr-rrie69uigi5.ws-us82.gitpod.io/api";
+const BASE_API_URL = "https://ucjune-project03-db.onrender.com/api";
 
 export default function ProductsProvider(props) {
   //states
@@ -24,6 +23,7 @@ export default function ProductsProvider(props) {
     const getAllProducts = async () => {
       let response = await axios.get(BASE_API_URL + "/products");
       setProducts(response.data);
+      console.log("rest");
     };
     const getSearchOptions = async () => {
       let response = await axios.get(BASE_API_URL + "/products/search_options");
@@ -39,6 +39,7 @@ export default function ProductsProvider(props) {
     });
     console.log("this is what i get from be via search", response.data);
     setProducts(response.data);
+    console.log(response.data);
     return response.data;
   };
 

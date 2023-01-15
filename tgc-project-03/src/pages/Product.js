@@ -12,7 +12,7 @@ import ProductContext from "../contexts/ProductContext";
 export default function Products() {
   const productContext = useContext(ProductContext);
 
-  let allProducts = productContext.getProducts();
+  let allProducts = productContext.getProducts() || [];
 
   // from parent
   const searchQuery = productContext.searchQuery;
@@ -54,8 +54,8 @@ export default function Products() {
   return (
     <React.Fragment>
       <div id="landing-container" className="container">
-        <video autoPlay loop muted id="landing-video">
-          {/* <source src={require("../assets/landing-vid.mp4")} type="video/mp4" /> */}
+        <video autoPlay loop muted id="landing-video" className="hero-vid">
+          <source src={require("../assets/images/landing-vid.mp4")} type="video/mp4" />
         </video>
       </div>
 

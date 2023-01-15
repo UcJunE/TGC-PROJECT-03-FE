@@ -46,19 +46,16 @@ export default function Login(props) {
 
   return (
     <React.Fragment>
-      <div className="container my-5">
+      <div className="container mt-2">
         <div className="row" id="login-main-box">
           <div id="login-box" className="col-lg-2 col-md-6">
             <img
               className="login-img"
-              src={require("../assets/login.jpg")}
+              src={require("../assets/images/login.jpg")}
               alt="login.img"
             />
           </div>
-          <div
-            className="container col-lg-2 col-md-6 mt-2"
-            id="login-container"
-          >
+          <div className="container col-lg-2 col-md mt-2" id="login-container">
             <h3 className="my-3">Login</h3>
             <FloatingLabel
               controlId="floatingInput"

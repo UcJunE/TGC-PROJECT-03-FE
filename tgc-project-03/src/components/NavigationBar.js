@@ -156,7 +156,7 @@ export default function NavigationBar() {
       <Navbar bg="light" expand="lg">
         <Container>
           <Navbar.Brand className="logo-container" as={Link} to="/">
-            <img className="logo" src={require("../assets/brand-logo.png")} alt="brand-img" />
+            <img className="logo" src={require("../assets/images/brand-logo.png")} alt="brand-img" />
           </Navbar.Brand>
           <Navbar.Toggle aria-controls="basic-navbar-nav" />
           <Navbar.Collapse id="basic-navbar-nav">

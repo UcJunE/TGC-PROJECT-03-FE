@@ -6,8 +6,7 @@ import "react-toastify/dist/ReactToastify.css";
 
 import UserContext from "../contexts/UserContext";
 
-const BASE_API_URL =
-  "https://8888-ucjune-tgcproject03expr-rrie69uigi5.ws-us82.gitpod.io/api";
+const BASE_API_URL ="https://ucjune-project03-db.onrender.com/api"
 
 export default function UserProvider(props) {
   const navigateTo = useNavigate();
@@ -31,11 +30,12 @@ export default function UserProvider(props) {
     },
     registerUser: async (userData) => {
       console.log(
-        "it run from register from userProvider with all the userData",
+        "it run from register from userProvider with all the userData layer 3",
         userData
       );
       try {
         await axios.post(BASE_API_URL + "/account/register", userData);
+        console.log("layer 4")
         toast.success("Account successfully registered");
         if (redirectTo) {
           navigateTo(redirectTo);
@@ -49,7 +49,7 @@ export default function UserProvider(props) {
       }
     },
     loginUser: async (userData) => {
-      // console.log("hello from login user")
+      console.log("hello from login user")
       try {
         const response = await axios.post(
           BASE_API_URL + "/account/login",
@@ -60,7 +60,7 @@ export default function UserProvider(props) {
           toast.error("Invalid username / password");
           return false;
         } else {
-          //   console.log("it went here");
+            console.log("it went here");
           const accessToken = response.data.accessToken;
           const refreshToken = response.data.refreshToken;
           const username = response.data.username

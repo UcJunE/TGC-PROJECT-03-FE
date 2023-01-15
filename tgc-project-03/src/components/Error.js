@@ -16,7 +16,7 @@ export default function Success() {
         <div className="card success-card">
           <div className="container success-card-container">
             <img
-              src={require("../assets/error-img.png")}
+              src={require("../assets/images/error-img.png")}
               className="img-fluid success-img my-3"
               alt="success-img"
             />
