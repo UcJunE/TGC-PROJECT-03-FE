@@ -12,7 +12,6 @@ export default function Order() {
   //state
   const [loading, setLoading] = useState(false);
   const [orders, setOrders] = useState([]);
-  
 
   useEffect(() => {
     (async () => {
@@ -54,52 +53,49 @@ export default function Order() {
               </tr>
             </thead>
             <tbody>
-              {orders.length ? (
-                orders.map((each) => {
-                  return (
-                    <tr key={each.id}>
-                      <td>{each.id}</td>
-                      <td>{moment(each.order_date).format("YYYY-MM-DD")}</td>
-                      <td>$ {(each.total_amount / 100).toFixed(2)}</td>
-                      <td>{each.shipping_type}</td>
-                      <td>
-                        {each.shipping_address_line1}
-                        <br />
-                        {each.shipping_address_line2}
-                        <br />
-                        {each.shipping_postal_code}
-                        <br />
-                        {each.shipping_country}
-                      </td>
-                      <td>
-                        {each.orderStatus.order_status}
-                        <br />
-                      </td>
-
-                      {each.delivery_date === null ? (
-                        <td>Pending</td>
-                      ) : (
+              {orders.length
+                ? orders.map((each) => {
+                    return (
+                      <tr key={each.id}>
+                        <td>{each.id}</td>
+                        <td>{moment(each.order_date).format("YYYY-MM-DD")}</td>
+                        <td>$ {(each.total_amount / 100).toFixed(2)}</td>
+                        <td>{each.shipping_type}</td>
                         <td>
-                          {" "}
-                          {moment(each.delivery_date).format("YYYY-MM-DD")}
+                          {each.shipping_address_line1}
+                          <br />
+                          {each.shipping_address_line2}
+                          <br />
+                          {each.shipping_postal_code}
+                          <br />
+                          {each.shipping_country}
                         </td>
-                        
-                      )}
+                        <td>
+                          {each.orderStatus.order_status}
+                          <br />
+                        </td>
 
-                      <td>
-                        <button
-                          className="btn btn-sm btn-primary"
-                          onClick={() => openNewTab(each.receipt_url)}
-                        >
-                          Receipt
-                        </button>
-                      </td>
-                    </tr>
-                  );
-                })
-              ) : (
-                <h1>gaga</h1>
-              )}
+                        {each.delivery_date === null ? (
+                          <td>Pending</td>
+                        ) : (
+                          <td>
+                            {" "}
+                            {moment(each.delivery_date).format("YYYY-MM-DD")}
+                          </td>
+                        )}
+
+                        <td>
+                          <button
+                            className="btn btn-sm product-btn"
+                            onClick={() => openNewTab(each.receipt_url)}
+                          >
+                            Receipt
+                          </button>
+                        </td>
+                      </tr>
+                    );
+                  })
+                : ""}
             </tbody>
           </Table>
         </div>

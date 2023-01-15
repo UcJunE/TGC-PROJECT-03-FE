@@ -1,4 +1,4 @@
-import React, { useContext, useEffect, useState } from "react";
+import React, { Fragment, useContext, useEffect, useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import { toast } from "react-toastify";
 import Container from "react-bootstrap/Container";
@@ -8,6 +8,7 @@ import { FaShoppingCart, FaUser } from "react-icons/fa";
 import Offcanvas from "react-bootstrap/Offcanvas";
 import NavDropdown from "react-bootstrap/NavDropdown";
 import ListGroup from "react-bootstrap/ListGroup";
+import Badge from "react-bootstrap/Badge";
 
 import UserContext from "../contexts/UserContext";
 import CartItem from "./CartItem";
@@ -93,9 +94,9 @@ export default function NavigationBar() {
               />
             );
           })}
-          <div className="my-bold mt-3">Total: ${totalCost / 100}</div>
-          <button className="btn btn-primary btn-sm mt-2" onClick={checkout}>
-            Checkout
+          <div className="my-bold mt-3 nav-text">Total: ${totalCost / 100}</div>
+          <button className="btn cart-btn btn-sm mt-2" onClick={checkout}>
+            CHECKOUT
           </button>
         </ListGroup>
       );
@@ -156,7 +157,7 @@ export default function NavigationBar() {
 
   return (
     <React.Fragment>
-      <Navbar className="nav-container" expand="lg">
+      <Navbar className="nav-container" expand="md">
         <Container>
           <Navbar.Brand className="logo-container" as={Link} to="/">
             <img
@@ -172,18 +173,40 @@ export default function NavigationBar() {
               <Nav className="ms-auto">
                 {/* Shopping cart */}
                 <Nav.Link eventKey="1" onClick={getCartItems}>
-                  <FaShoppingCart style={{ fontSize: "30px" }} />
-                  <span className="ms-2 nav-text">Shopping Cart</span>
+                  <FaShoppingCart className="shopping-cart"  />
+                  {cartItems.length ? (
+                    <Fragment>
+                      <Badge className="badge-text" bg="secondary">
+                        {cartItems.length}
+                      </Badge>
+                      <span className="visually-hidden"></span>
+                    </Fragment>
+                  ) : (
+                    <Fragment>
+                      <Badge className="badge-text" bg="secondary">
+                        0
+                      </Badge>
+                      <span className="visually-hidden"></span>
+                    </Fragment>
+                  )}
                 </Nav.Link>
                 {/* Accounts */}
-                <NavDropdown title="Account">
-                  <NavDropdown.Item>Hi {userContext.name}</NavDropdown.Item>
+                <NavDropdown className="nav-text" title="Account">
+                  <NavDropdown.Item className="nav-text">
+                    Hi {userContext.name}
+                  </NavDropdown.Item>
                   <NavDropdown.Divider />
-                  <NavDropdown.Item eventKey="2" as={Link} to="/order">
+                  <NavDropdown.Item
+                    className="nav-text"
+                    eventKey="2"
+                    as={Link}
+                    to="/order"
+                  >
                     Orders
                   </NavDropdown.Item>
                   <NavDropdown.Divider />
                   <NavDropdown.Item
+                    className="nav-text"
                     eventKey="3"
                     onClick={userContext.logoutUser}
                   >
@@ -203,8 +226,8 @@ export default function NavigationBar() {
                   <span className="ms-2 nav-text">Shopping Cart</span>
                 </Nav.Link>
                 <Nav.Link eventKey="4" as={Link} to="/login">
-                <FaUser style={{ fontSize: "30px" }}/>
-                <span className="ms-2 nav-text">Login</span>
+                  <FaUser style={{ fontSize: "30px" }} />
+                  <span className="ms-2 nav-text">Login</span>
                 </Nav.Link>
               </Nav>
             )}

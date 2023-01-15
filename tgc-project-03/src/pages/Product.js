@@ -71,9 +71,9 @@ export default function Products() {
       </div>
 
       <div className="container my-4">
-        <Accordion defaultActiveKey="0">
+        <Accordion>
           <Accordion.Item eventKey="0">
-            <Accordion.Header className="search-container">Search</Accordion.Header>
+            <Accordion.Header  className="search-container">Search</Accordion.Header>
             <Accordion.Body className="search-container">
               <FloatingLabel className="mb-3" label="Enter name of product">
                 <Form.Control

@@ -22,6 +22,7 @@ body {
 }
 
 .card {
+  width: 300px;
   overflow: hidden;
   background-image: linear-gradient(60deg, #eae0da, #fff, #eae0da) !important;
 }
@@ -91,6 +92,7 @@ body {
   background-image: url("./assets/images/landing-page.png");
   background-position: center;
   background-size: cover;
+  transition: 3s;
 }
 .landing-video {
   width: 100%;
@@ -217,6 +219,48 @@ body {
   font-size: 1.3rem;
 }
 
+.badge-text {
+  margin-left: 10px;
+  color: white !important;
+}
+
+.cart-btn {
+  color: #000 !important;
+  background-image: linear-gradient(60deg, #eae0da, #fff) !important;
+  border-radius: 3% !important;
+  border: none !important;
+  display: inline-block;
+  font-family: "Montserrat", sans-serif !important;
+  font-weight: 700 !important;
+  font-size: 1.2rem;
+  cursor: pointer;
+  box-shadow: inset 0 0 0 0 #aabbb8;
+  -webkit-transition: ease-out 0.4s !important;
+  -moz-transition: ease-out 0.4s !important;
+  transition: ease-out 0.4s !important;
+}
+
+.cart-btn:hover {
+  border: none;
+  box-shadow: inset 0 0 0 50px #eae0da;
+}
+
+.cart-container {
+  background-image: linear-gradient(#fff, #eae0da) !important;
+}
+
+.cart-img {
+  margin-top: 20px;
+}
+
+.shopping-cart {
+  font-size: 30px;
+  color: black;
+}
+
+.shopping-cart:hover {
+  color: white;
+}
 /* for tablet medium screen size  768px above */
 @media screen and (min-width: 768px) {
   #login-main-box {

@@ -67,10 +67,10 @@ export default function CartItem(props) {
 
   return (
     <li className="list-group-item">
-      <div className="row">
+      <div className="row cart-container">
         <div className="col col-3">
           <img
-            style={{ width: "100%" }}
+            className="cart-img"
             src={props.cartItem.jewelry.jewelry_thumbnail_url}
             alt="product-img"
           ></img>
@@ -88,7 +88,7 @@ export default function CartItem(props) {
 
           {updateItem ? (
             <div className="d-flex">
-              <button className="btn btn-sm my-btn" onClick={increment}>
+              <button className="btn btn-sm cart-btn" onClick={increment}>
                 +
               </button>
               <input
@@ -98,11 +98,11 @@ export default function CartItem(props) {
                 value={updateItemQuantity}
                 disabled
               />
-              <button className="btn btn-sm my-btn" onClick={decrement}>
+              <button className="btn btn-sm cart-btn" onClick={decrement}>
                 -
               </button>
               <button
-                className="btn btn-sm btn-primary ms-2"
+                className="btn btn-sm cart-btn ms-2"
                 onClick={() => {
                   confirmUpdateItem(updateItem, updateItemQuantity);
                 }}
@@ -113,7 +113,7 @@ export default function CartItem(props) {
           ) : (
             <div className="d-flex">
               <button
-                className="btn btn-sm my-btn"
+                className="btn btn-sm cart-btn"
                 onClick={increment}
                 value={updateItemQuantity}
               >
@@ -127,7 +127,7 @@ export default function CartItem(props) {
                 value={props.cartItem.quantity}
               />
               <button
-                className="btn btn-sm my-btn"
+                className="btn btn-sm cart-btn"
                 onClick={decrement}
                 value={updateItemQuantity}
               >
@@ -138,7 +138,7 @@ export default function CartItem(props) {
         </div>
         <div className="col col-2">
           <button
-            className="btn btn-sm"
+            className="btn btn-sm cart-btn"
             onClick={() => {
               confirmRemoveItem(props.cartItem.jewelry.id);
             }}
