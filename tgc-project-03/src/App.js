@@ -3,7 +3,7 @@ import "./App.css";
 import "bootstrap/dist/css/bootstrap.min.css";
 
 // import react router stuff
-import { BrowserRouter as Router, Routes, Route, Link } from "react-router-dom";
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 //import in pages
 import Register from "./pages/Register";
 import AboutUs from "./pages/about-us";
@@ -50,7 +50,7 @@ function App() {
             {/* client route */}
             <Route path="/login" element={<Login />} />
             <Route path="/register" element={<Register />} />
-
+            <Route path="/about-us" element={<AboutUs />} />
             {/* checkout route */}
             <Route path="/checkout" element={<Checkout />} />
             <Route path="/checkout/success" element={<Success />} />
@@ -58,8 +58,8 @@ function App() {
             <Route path="/order" element={<Order />} />
           </Routes>
         </UserProvider>
+        <Footer />
       </Router>
-      <Footer />
     </React.Fragment>
   );
 }

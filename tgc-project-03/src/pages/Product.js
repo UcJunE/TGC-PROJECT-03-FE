@@ -64,15 +64,6 @@ export default function Products() {
         </Button>
       </div>
 
-      <div id="landing-container" className="container">
-        <video autoPlay loop muted id="landing-video" className="hero-vid">
-          <source
-            src={require("../assets/images/landing-vid.mp4")}
-            type="video/mp4"
-          />
-        </video>
-      </div>
-
       <div className="container my-4 " id="product-section">
         <Accordion>
           <Accordion.Item eventKey="0">

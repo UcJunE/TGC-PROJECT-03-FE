@@ -1,4 +1,5 @@
 import React from "react";
+import { useNavigate } from "react-router-dom";
 import {
   FaFacebookSquare,
   FaInstagram,
@@ -7,20 +8,26 @@ import {
 } from "react-icons/fa";
 
 export default function Footer() {
+  const navigateTo = useNavigate();
+
+  const aboutUs = () => {
+    navigateTo("/about-us");
+  };
+
   return (
     <div className="container my-5">
       <footer>
         <div className="container p-4">
           <div className="row">
             <div className="col-lg-4 col-md-6 mb-4">
-              <h5 className="mb-3 footer-title">About Us</h5>
+              <h5 className="mb-3 footer-title" onClick={aboutUs}>
+                About Amare L'amore
+              </h5>
               <p className="footer-text">
-                Looking for everyday jewelry? <br></br>Pick our classic
-                collection, mix & match to find your look. <br></br>Warning:
-                Ready to receive more compliments? <br></br> Our pieces are
-                waiting to be yours. <br></br>How do you like them? <br></br>
-                Make it your signature. <br></br>Your new go-to jewelry.
-                <br></br> Always ready for you.
+                As a premium Manufacturer of Fashion Jewelry, specializing in
+                custom made Jewelry & Accessories for 30 years. <br></br> We are
+                confident to provide professional service to our valued
+                customers in our fashion jewelry and accessories business.
               </p>
             </div>
             <div className="col-lg-4 col-md-6 mb-4">
