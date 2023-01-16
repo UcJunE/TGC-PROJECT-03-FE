@@ -1,7 +1,7 @@
 import React from "react";
 import { useContext, useState, useEffect } from "react";
 import moment from "moment";
-
+import Spinner from "../components/Spinner";
 import Table from "react-bootstrap/Table";
 
 import UserContext from "../contexts/UserContext";
@@ -103,7 +103,7 @@ export default function Order() {
         <div className="container adjust-margin-top pt-5">
           <h1>Orders</h1>
           <div className="container mt-3 mt-md-4">
-            <h1>LOADING SPINNNNERRR</h1>
+            <Spinner />
           </div>
         </div>
       )}

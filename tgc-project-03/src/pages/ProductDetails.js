@@ -6,6 +6,7 @@ import UserContext from "../contexts/UserContext";
 import { useEffect, useState } from "react";
 import { toast } from "react-toastify";
 import "bootstrap/dist/css/bootstrap.min.css";
+import Spinner from "../components/Spinner";
 
 export default function ProductDetails(props) {
   const productContext = useContext(ProductContext);
@@ -130,7 +131,7 @@ export default function ProductDetails(props) {
           </div>
         </div>
       ) : (
-        <h1>Loading</h1>
+        <Spinner />
       )}
     </React.Fragment>
   );

@@ -4,7 +4,6 @@ import axios from "axios";
 
 //context
 import ProductContext from "../contexts/ProductContext";
-
 const BASE_API_URL = "https://ucjune-project03-db.onrender.com/api";
 
 export default function ProductsProvider(props) {

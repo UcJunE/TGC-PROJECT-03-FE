@@ -37,19 +37,19 @@ export default function Products() {
     }
   };
 
-  const searchFunction = () => {
-    let result = [];
-    for (let product of allProducts) {
-      let min_cost = 1000;
-      let max_cost = 30000;
-      let c = product.cost;
+  // const searchFunction = () => {
+  //   let result = [];
+  //   for (let product of allProducts) {
+  //     let min_cost = 1000;
+  //     let max_cost = 30000;
+  //     let c = product.cost;
 
-      if (c >= min_cost && c <= max_cost) {
-        result.push(product.name);
-      }
-    }
-    console.log(result);
-  };
+  //     if (c >= min_cost && c <= max_cost) {
+  //       result.push(product.name);
+  //     }
+  //   }
+  //   console.log(result);
+  // };
 
   return (
     <React.Fragment>
@@ -112,7 +112,10 @@ export default function Products() {
                 </Form.Select>
               </Form.Group>
               <div className="container px-0 d-flex">
-                <FloatingLabel className="d-flex mb-3 form-box" label="Min cost">
+                <FloatingLabel
+                  className="d-flex mb-3 form-box"
+                  label="Min cost"
+                >
                   <Form.Control
                     type="text"
                     placeholder="Min cost"
@@ -171,7 +174,7 @@ export default function Products() {
                           as={Link}
                           to={`/products/${product.id}/info`}
                         >
-                         VIEW
+                          VIEW
                         </Button>
                       </Card.Body>
                     </Card>

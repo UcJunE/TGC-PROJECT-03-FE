@@ -196,7 +196,7 @@ export default function Register(props) {
               )}
             </FloatingLabel>
             <div className="container my-3 px-0">
-              <Button variant="primary" onClick={register}>
+              <Button className="cart-btn" onClick={register}>
                 Register
               </Button>
             </div>

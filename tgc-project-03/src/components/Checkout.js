@@ -1,11 +1,11 @@
 import React, { useContext } from "react";
 import { useNavigate } from "react-router-dom";
 import { loadStripe } from "@stripe/stripe-js";
-
+import Spinner from "../components/Spinner";
 import UserContext from "../contexts/UserContext";
 
 export default function Checkout() {
-    console.log("1st layer checkout")
+  console.log("1st layer checkout");
   const userContext = useContext(UserContext);
 
   const navigateTo = useNavigate();
@@ -31,8 +31,9 @@ export default function Checkout() {
 
   return (
     <React.Fragment>
-      <div className="container d-flex flex-column justify-content-center align-items-center adjust-margin-top pt-5">
+      <div className="container d-flex flex-column justify-content-center">
         <h3>Checking out cart in progress</h3>
+        <Spinner />
       </div>
     </React.Fragment>
   );

@@ -4,11 +4,11 @@ import Spinner from "../components/Spinner";
 export default function Success() {
   const navigateTo = useNavigate();
 
-  // useEffect(() => {
-  //   setTimeout(() => {
-  //     navigateTo("/");
-  //   }, 3000);
-  // }, []);
+  useEffect(() => {
+    setTimeout(() => {
+      navigateTo("/");
+    }, 3000);
+  }, []);
 
   return (
     <React.Fragment>

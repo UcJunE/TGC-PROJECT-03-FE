@@ -95,7 +95,7 @@ export default function Login(props) {
               />
             </div>
             <div className="container my-3 px-0">
-              <Button variant="primary" onClick={loginUser}>
+              <Button className="cart-btn" onClick={loginUser}>
                 Login
               </Button>
             </div>
@@ -103,6 +103,7 @@ export default function Login(props) {
               <p className="mt-3 me-auto px-0">Don't Have Account yet ?</p>{" "}
               <button
                 style={{
+                  textDecoration: "underline",
                   border: "none",
                   backgroundColor: "transparent",
                   padding: "0px",

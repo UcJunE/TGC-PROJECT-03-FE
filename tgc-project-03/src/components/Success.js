@@ -8,7 +8,7 @@ export default function Success() {
   useEffect(() => {
     setTimeout(() => {
       navigateTo("/order");
-    }, 10000);
+    }, 3000);
   }, []);
 
   return (
