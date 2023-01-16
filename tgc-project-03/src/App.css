@@ -6,6 +6,20 @@ body {
   background-image: linear-gradient(#ffd4b2, white) !important;
 }
 
+.ficon:hover {
+  color: #ffd4b2;
+}
+
+.footer-text {
+  font-family: "Montserrat", sans-serif;
+}
+
+.footer-title {
+  font-family: "Montserrat", sans-serif;
+  font-weight: 700;
+  font-size: 1.5rem;
+}
+
 .nav-container {
   background-image: linear-gradient(75deg, #fff8ea, #ffd4b2) !important;
 }
@@ -456,7 +470,7 @@ body {
 
 /* for laptop size above */
 @media screen and (min-width: 1024px) {
-  .error-card{
+  .error-card {
     margin-left: 320px !important;
   }
 
@@ -535,7 +549,7 @@ body {
 /* 1440px screen size and above */
 
 @media screen and (min-width: 1440px) {
-  .error-card{
+  .error-card {
     margin-left: 450px !important;
   }
 
@@ -628,7 +642,7 @@ body {
 }
 
 @media screen and (min-width: 1920px) {
-  .error-card{
+  .error-card {
     margin-left: 320px !important;
   }
 

@@ -82,6 +82,15 @@ The test cases can be found [here](../tgc-project-03/src/assets/screenshoots/Tes
 
 ---
 
+## Limitations and Future Implementations
+
+| Limitations                                                    | Future Implementations                                                                       |
+| -------------------------------------------------------------- | -------------------------------------------------------------------------------------------- |
+| Overall website is lackluster                                  | Consider adding products review and some interesting feature to make the website more lively |
+| To improve the aesthetics, UI & UX not really shinning enough. | Learn more from dribble / canva to improve the user 's UI UX experience                      |
+
+---
+
 ## Technologies Used
 
 ### Backend
@@ -160,7 +169,7 @@ STRIPE_ENDPOINT_SECRET=
 
 2. [React-Icon](https://react-icons.github.io/react-icons/) - Used for beautiful icons of website
 
-3. [Flaticon]("https://www.flaticon.com/free-icons/") - Used for Icon on the browser
+3. [Flaticon]("https://www.flaticon.com/free-icons/") - ewelry icons created by Freepik - Flaticon
 
 4. [Lottiefiles](https://lottiefiles.com/) - Adapted CSS spinner for use in website
 
