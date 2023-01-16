@@ -1,5 +1,6 @@
 import React, { useEffect } from "react";
 import { useNavigate } from "react-router-dom";
+import Spinner from "../components/Spinner";
 
 export default function Success() {
   const navigateTo = useNavigate();
@@ -7,7 +8,7 @@ export default function Success() {
   useEffect(() => {
     setTimeout(() => {
       navigateTo("/order");
-    }, 3000);
+    }, 10000);
   }, []);
 
   return (
@@ -27,7 +28,7 @@ export default function Success() {
             <br />
             we'll be in touch shortly!
           </p>
-          <p>for spinner</p>
+          <Spinner />
         </div>
       </div>
     </React.Fragment>

@@ -1,6 +1,6 @@
 import React, { useEffect } from "react";
 import { useNavigate } from "react-router-dom";
-
+import Spinner from "../components/Spinner";
 export default function Success() {
   const navigateTo = useNavigate();
 
@@ -14,7 +14,7 @@ export default function Success() {
     <React.Fragment>
       <div className="container error-body my-5">
         <div className="card error-card">
-          <div className="container success-card-container">
+          <div className="container error-card-container">
             <img
               src={require("../assets/images/error-img.png")}
               className="img-fluid success-img my-3"
@@ -26,7 +26,7 @@ export default function Success() {
             Please check your security code , card details and connection and
             try again
           </p>
-          <p>for spinner</p>
+          <Spinner />
         </div>
       </div>
     </React.Fragment>

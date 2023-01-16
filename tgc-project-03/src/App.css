@@ -165,6 +165,20 @@ body {
 }
 
 /* error page */
+.error-card-container {
+  border-radius: 200px;
+  height: 200px;
+  width: 200px;
+  background: #f8faf5;
+  margin: 0 auto;
+}
+
+.error-body {
+  text-align: center;
+  padding: 40px 0;
+  background-image: linear-gradient(#ffd4b2, white) !important;
+}
+
 .error-body {
   width: 100vh !important;
   text-align: center;
