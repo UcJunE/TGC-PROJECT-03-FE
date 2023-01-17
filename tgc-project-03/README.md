@@ -9,7 +9,7 @@ Link to demo : [Amare l'amore](https://tgc-amare-lamore.netlify.app/)
 - Admin Panel at [Amare l'amore Backend](https://ucjune-project03-db.onrender.com/register)
 
   - Username: admin
-  - Password: admin
+  - Password: 123456
 
 - React Frontend at [Amare l'amore React](https://tgc-amare-lamore.netlify.app/)
   - Username: customer
@@ -188,6 +188,7 @@ STRIPE_ENDPOINT_SECRET=
 
 1. [Paul Chor](https://github.com/kunxin-chor) tutorial in providing guidance on creating app
 2. Wesley and Yong Sheng (Teaching Assistants) for their guidance and support.
+3. [SK Jewellery](https://www.skjewellery.com.sg) Beautiful jewellery photo.
 
 ## Deployment
 
