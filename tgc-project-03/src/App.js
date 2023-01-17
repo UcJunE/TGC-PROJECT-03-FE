@@ -58,7 +58,9 @@ function App() {
             <Route path="/order" element={<Order />} />
           </Routes>
         </UserProvider>
-        <Footer />
+        <div className="container-fluid footer-container">
+          <Footer />
+        </div>
       </Router>
     </React.Fragment>
   );
