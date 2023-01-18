@@ -12,6 +12,7 @@ import Badge from "react-bootstrap/Badge";
 
 import UserContext from "../contexts/UserContext";
 import CartItem from "./CartItem";
+import Spinner from "./Spinner";
 export default function NavigationBar() {
   const userContext = useContext(UserContext);
 
@@ -173,7 +174,7 @@ export default function NavigationBar() {
               <Nav className="ms-auto">
                 {/* Shopping cart */}
                 <Nav.Link eventKey="1" onClick={getCartItems}>
-                  <FaShoppingCart className="shopping-cart"  />
+                  <FaShoppingCart className="shopping-cart" />
                   {cartItems.length ? (
                     <Fragment>
                       <Badge className="badge-text" bg="secondary">
@@ -240,7 +241,7 @@ export default function NavigationBar() {
           <Offcanvas.Title>Cart</Offcanvas.Title>
         </Offcanvas.Header>
         <Offcanvas.Body>
-          {cartRender ? renderCartItems() : <h1>Loading</h1>}
+          {cartRender ? renderCartItems() : <Spinner />}
         </Offcanvas.Body>
       </Offcanvas>
     </React.Fragment>
