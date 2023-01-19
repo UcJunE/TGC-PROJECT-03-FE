@@ -8,7 +8,7 @@ Link to demo : [Amare l'amore](https://tgc-amare-lamore.netlify.app/)
 
 - Admin Panel at [Amare l'amore Backend](https://ucjune-project03-db.onrender.com/register)
 
-  - Username: admin
+  - Email: admin@email.com
   - Password: 123456
 
 - React Frontend at [Amare l'amore React](https://tgc-amare-lamore.netlify.app/)
