@@ -47,7 +47,7 @@ To create an e-commerce web application to sell Jewelry exclusively. The organis
 The sitemap for Amare L'amore React (e-commerce frontend) is as follow:
 ![Amare L'amore React Sitemap](../tgc-project-03/src/assets/screenshoots/site-map.PNG)
 
-The sitemap for Amare L'amore React (e-commerce frontend) is as follow:
+The sitemap for Amare L'amore React (e-commerce backend) is as follow:
 
 ![Amare L'amore React Sitemap](../tgc-project-03/src/assets/screenshoots/site-map-be.PNG)
 
