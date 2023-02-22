@@ -51,6 +51,14 @@ The sitemap for Amare L'amore React (e-commerce backend) is as follow:
 
 ![Amare L'amore React Sitemap](../tgc-project-03/src/assets/screenshoots/site-map-be.PNG)
 
+
+
+### UI Wireframes
+
+The UI Wireframes can be found [here](../tgc-project-03/src/assets/screenshoots/wireframe.pdf)
+
+
+
 ### Design Decision
 
 #### Color scheme
