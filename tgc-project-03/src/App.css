@@ -487,7 +487,7 @@ body {
   }
 
   #register-container {
-    margin-left: 10px !important;
+    margin-left: auto !important;
     width: 400px;
   }
 }
@@ -545,7 +545,7 @@ body {
 
   .login-img {
     height: 500px;
-    width: 50vw;
+    width: 100%;
     object-fit: cover;
   }
 
@@ -566,12 +566,13 @@ body {
 
   .register-img {
     height: 100%;
-    width: 50vw;
+    width: 100%;
     object-fit: cover;
   }
 
   #register-container {
-    width: 320px;
+    width: 320px !important;
+    margin-left: auto !important;
   }
 }
 
@@ -642,7 +643,7 @@ body {
 
   .login-img {
     height: 500px;
-    width: 50vw;
+    width: 100%;
     object-fit: cover;
   }
 
@@ -662,12 +663,13 @@ body {
 
   .register-img {
     height: 100%;
-    width: 50vw;
+    width: 100%;
     object-fit: cover;
   }
 
   #register-container {
-    width: 320px;
+    width: 320px !important;
+    margin-left: auto !important;
   }
 }
 
@@ -688,7 +690,7 @@ body {
   }
   .register-img {
     height: 100%;
-    width: 31vw;
+    width: 100% !important;
     object-fit: cover;
   }
 

@@ -8,7 +8,6 @@ import Button from "react-bootstrap/Button";
 
 export default function Register(props) {
   const userContext = useContext(UserContext);
-  
 
   //state
   const [errors, setErrors] = useState([]);
@@ -84,16 +83,15 @@ export default function Register(props) {
       contact_number: formFields.contact_number,
       password: formFields.password,
     };
-    console.log("layer 2")
+    console.log("layer 2");
     await userContext.registerUser(userData);
-    
   };
 
   return (
     <React.Fragment>
       <div className="container mt-2">
         <div className="row" id="register-main-box">
-          <div id="register-box" className="col-lg-6 col-md-6">
+          <div id="register-box" className="col-xxl-7 col-lg-7 col-md-6">
             <img
               className="register-img"
               src={require("../assets/images/register.jpg")}
@@ -101,7 +99,7 @@ export default function Register(props) {
             />
           </div>
           <div
-            className="container col-lg-6 col-md mt-2"
+            className="container col-xxl-3 col-lg-5 col-md mt-2"
             id="register-container"
           >
             <h3 className="my-3">Register</h3>
