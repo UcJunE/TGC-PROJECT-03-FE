@@ -53,12 +53,13 @@ export default function Products() {
 
   return (
     <React.Fragment>
-      <div className="container-fluid landing-box">
-        <img
+      <div className="container-fluid landing-box landing-pic">
+        {/* <img
           className="landing-pic"
           src={require("../assets/images/landing-page.png")}
           alt="landing-img"
-        />
+        /> */}
+        {/* <div className="landing-pic container"></div> */}
         <Button href="#product-section" className="hero-btn">
           Shop Now
         </Button>

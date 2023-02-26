@@ -145,7 +145,7 @@ body {
 .landing-pic {
   height: 100vh;
   width: 100vw;
-  background-image: url("../src/assets/images/mobile-landing.png");
+  background-image: url("../src/assets/images/mobile-landing.png") !important;
   background-position: center;
   background-size: cover;
   object-fit: fill;
@@ -433,7 +433,7 @@ body {
   .landing-pic {
     height: 100vh;
     width: 100vw;
-    background-image: url("../src/assets/images/landing-page.png");
+    background-image: url("../src/assets/images/mobile-landing.png") !important;
     background-position: center;
     background-size: cover;
     object-fit: fill;
@@ -496,7 +496,7 @@ body {
 
   .d-btn-btn {
     margin-bottom: 20px !important;
-    margin-right: 200px;
+    justify-content: start !important;
   }
 
   .detail-main-box {
@@ -523,9 +523,8 @@ body {
     height: 100vh;
     width: 100vw;
     background-image: url("../src/assets/images/landing-page.png");
-    background-position: center;
-    background-size: cover;
-    object-fit: fill;
+    background-size: cover !important;
+    object-fit: cover !important;
   }
   #login-main-box {
     width: 100%;
@@ -543,7 +542,7 @@ body {
   }
 
   #login-container {
-    margin-left: 400px;
+    margin-top: 50px !important;
     width: 300px;
   }
 
@@ -564,7 +563,6 @@ body {
   }
 
   #register-container {
-    margin-left: 400px;
     width: 320px;
   }
 }
@@ -578,10 +576,8 @@ body {
   .landing-pic {
     height: 100vh;
     width: 100vw;
-    background-image: url("../src/assets/images/landing-page.png");
     background-position: center;
-    background-size: cover;
-    object-fit: fill;
+    background-size: cover !important;
   }
   .d-btn-btn {
     margin-bottom: 20px !important;
@@ -641,7 +637,6 @@ body {
   }
 
   #login-container {
-    margin-left: 600px;
     width: 300px;
   }
 
@@ -662,7 +657,6 @@ body {
   }
 
   #register-container {
-    margin-left: 650px;
     width: 320px;
   }
 }
@@ -674,29 +668,28 @@ body {
   .landing-pic {
     height: 100vh;
     width: 100vw;
-    background-image: url("../src/assets/images/landing-page.png");
+    background-image: url("../src/assets/images/landing-page.png") !important;
     background-position: center;
     background-size: cover;
     object-fit: fill;
   }
   #register-container {
-    margin-left: 620px;
     width: 320px;
   }
   .register-img {
     height: 100%;
-    width: 35vw;
+    width: 31vw;
     object-fit: cover;
   }
 
   #login-container {
-    margin-left: 630px;
+    margin-top: 50px !important;
     width: 300px;
   }
 
   .login-img {
     height: 500px;
-    width: 35vw;
+    width: 31vw;
     object-fit: cover;
   }
 }

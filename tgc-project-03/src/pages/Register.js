@@ -93,7 +93,7 @@ export default function Register(props) {
     <React.Fragment>
       <div className="container mt-2">
         <div className="row" id="register-main-box">
-          <div id="register-box" className="col-lg-2 col-md-6">
+          <div id="register-box" className="col-lg-6 col-md-6">
             <img
               className="register-img"
               src={require("../assets/images/register.jpg")}
@@ -101,7 +101,7 @@ export default function Register(props) {
             />
           </div>
           <div
-            className="container col-lg-2 col-md mt-2"
+            className="container col-lg-6 col-md mt-2"
             id="register-container"
           >
             <h3 className="my-3">Register</h3>
